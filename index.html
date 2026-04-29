@@ -1,443 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sri Lakshmi Vaddi | Java Backend & AI Portfolio</title>
+<title>Sri Lakshmi Vaddi | Portfolio Website</title>
 
 <style>
 
-:root{
---navy:#0d1b2a;
---teal:#1a9e8f;
---cream:#f7f3ee;
---white:#ffffff;
---muted:#6b7280;
---text:#2c2c2c;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
 body{
-font-family:Arial;
-background:var(--cream);
-color:var(--text);
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f6f8;
+color:#333;
 line-height:1.7;
 }
 
-nav{
-position:fixed;
-top:0;
-left:0;
-right:0;
-background:rgba(13,27,42,0.96);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:16px 60px;
-z-index:100;
-}
-
-.nav-logo{
-color:#22c5b4;
-font-weight:bold;
-font-size:1.2rem;
-}
-
-.nav-links{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-.nav-links a{
+header{
+background:#2c3e50;
 color:white;
-text-decoration:none;
-font-size:0.85rem;
-text-transform:uppercase;
-}
-
-.hero{
-min-height:100vh;
-background:var(--navy);
-color:white;
-display:flex;
-align-items:center;
-padding:120px 60px;
-}
-
-.hero h1{
-font-size:4.5rem;
-margin-bottom:20px;
-}
-
-.hero span{
-color:#22c5b4;
-}
-
-.hero-sub{
-max-width:700px;
-margin-bottom:30px;
-font-size:1.1rem;
-}
-
-.hero-stats{
-display:flex;
-gap:40px;
-margin-top:40px;
-}
-
-.stat-num{
-font-size:2rem;
-color:#22c5b4;
-font-weight:bold;
-display:block;
-}
-
-section{
-padding:90px 60px;
-}
-
-.section-title{
-font-size:2.5rem;
-margin-bottom:15px;
-color:var(--navy);
-}
-
-.section-intro{
-max-width:700px;
-margin-bottom:40px;
-color:var(--muted);
-}
-
-.about-section{
-background:var(--navy);
-color:white;
-}
-
-.about-section .section-title{
-color:white;
-}
-
-.about-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-}
-
-.about-card{
-background:rgba(255,255,255,0.06);
-padding:30px;
-border-radius:15px;
-}
-
-.resume-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-}
-
-.timeline-item{
-margin-bottom:25px;
-border-left:3px solid var(--teal);
-padding-left:18px;
-}
-
-.timeline-date{
-color:var(--teal);
-font-weight:bold;
-font-size:0.85rem;
-}
-
-.timeline-title{
-font-weight:bold;
-color:var(--navy);
-}
-
-.timeline-org{
-color:var(--muted);
-}
-
-.skill-tags{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
-
-.skill-tag{
-background:var(--navy);
-color:white;
-padding:6px 14px;
-border-radius:20px;
-font-size:0.85rem;
-}
-
-.portfolio-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-}
-
-.project-card{
-background:white;
-border-radius:15px;
-padding:25px;
-}
-
-.contact-section{
-background:var(--navy);
-color:white;
+padding:35px;
 text-align:center;
 }
 
-.contact-card{
-background:rgba(255,255,255,0.07);
-padding:25px;
-border-radius:15px;
-display:inline-block;
-margin:10px;
-text-decoration:none;
+header h1{
+margin-bottom:8px;
+}
+
+nav{
+background:#1f2d3d;
+text-align:center;
+padding:12px;
+}
+
+nav a{
 color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#85d6c7;
+}
+
+section{
+background:white;
+margin:25px auto;
+padding:28px;
+width:85%;
+border-radius:10px;
+box-shadow:0px 0px 7px lightgray;
+}
+
+h2{
+color:#2c3e50;
+border-bottom:2px solid #e5e5e5;
+padding-bottom:8px;
+}
+
+h3{
+color:#34495e;
+}
+
+ul{
+line-height:1.8;
+}
+
+.skill-box span{
+display:inline-block;
+background:#2c3e50;
+color:white;
+padding:7px 13px;
+border-radius:18px;
+margin:5px;
+font-size:14px;
 }
 
 footer{
-background:#060f18;
+background:#2c3e50;
 color:white;
 text-align:center;
-padding:25px;
+padding:18px;
+margin-top:25px;
 }
 
-@media(max-width:768px){
-
-.about-grid,
-.resume-grid,
-.portfolio-grid{
-grid-template-columns:1fr;
-}
-
-.hero{
-padding:100px 25px;
-}
-
-section{
-padding:70px 25px;
-}
-
+a{
+color:#1a7f72;
 }
 
 </style>
-
 </head>
+
 
 <body>
 
+
+<header>
+
+<h1>Sri Lakshmi Vaddi</h1>
+
+<p>
+
+Java Backend Developer | Spring Boot | REST APIs | Apache Kafka  
+MS Artificial Intelligence Student | Interested in Backend Systems and Machine Learning Applications
+
+</p>
+
+</header>
+
+
+
 <nav>
 
-<div class="nav-logo">SLV</div>
-
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#resume">Resume</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#future">Future</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<a href="#profile">Profile</a>
+<a href="#education">Education</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#future">Future</a>
+<a href="#contact">Contact</a>
 
 </nav>
 
 
-<section class="hero">
 
-<div>
+<section id="profile">
 
-<h1>Sri Lakshmi <span>Vaddi</span></h1>
+<h2>Professional Profile</h2>
 
-<p class="hero-sub">
+<p>
 
-Java Backend Developer with 4.2 years of experience at Tata Consultancy Services (Client: Allianz).
-Currently pursuing MS in Artificial Intelligence at University at Buffalo.
-Interested in building scalable backend systems integrated with Machine Learning.
+I am a Java Backend Developer with professional experience working at Tata Consultancy Services for the Allianz client. My work involved developing backend services using Java and Spring Boot, designing REST APIs, and supporting communication between distributed enterprise applications.
 
 </p>
 
-<div class="hero-stats">
+<p>
 
-<div>
-<span class="stat-num">4.2</span>
-Java Experience
-</div>
+I also worked with Apache Kafka messaging systems, where producers and consumers supported reliable communication between backend microservices using event-driven architecture. This experience helped me understand enterprise backend workflows, distributed system communication, debugging support, testing activities, and production issue resolution.
 
-<div>
-<span class="stat-num">MS</span>
-Artificial Intelligence
-</div>
+</p>
 
-<div>
-<span class="stat-num">5+</span>
-Projects
-</div>
+<p>
 
-</div>
-
-</div>
-
-</section>
-
-
-<section class="about-section" id="about">
-
-<h2 class="section-title">Professional Profile</h2>
-
-<p class="section-intro">
-
-I am a Java Backend Developer with 4.2 years of enterprise experience at Tata Consultancy Services working for Allianz client.
-I developed backend services using Java, Spring Boot, REST APIs and Apache Kafka messaging systems.
-I worked on microservices communication workflows, debugging production issues, testing support activities,
-and Agile development collaboration using GitHub and Jira tools.
-
-Currently, I am pursuing a Master’s degree in Artificial Intelligence at University at Buffalo.
-My goal is to combine backend engineering with Machine Learning systems to build intelligent scalable enterprise platforms.
+Currently, I am pursuing a Master’s degree in Artificial Intelligence at the University at Buffalo. My goal is to combine backend engineering experience with Machine Learning knowledge to build intelligent enterprise applications that support automation, prediction systems, and real-time data-driven solutions.
 
 </p>
 
 </section>
 
 
-<section id="resume">
 
-<h2 class="section-title">Resume</h2>
+<section id="education">
 
-<div class="resume-grid">
+<h2>Education</h2>
 
-<div>
+<h3>Master of Science in Artificial Intelligence</h3>
 
-<div class="timeline-item">
-<div class="timeline-date">2024 — Present</div>
-<div class="timeline-title">MS Artificial Intelligence</div>
-<div class="timeline-org">University at Buffalo</div>
-</div>
-
-<div class="timeline-item">
-<div class="timeline-date">4.2 Years</div>
-<div class="timeline-title">Java Backend Developer</div>
-<div class="timeline-org">TCS — Client Allianz</div>
-</div>
-
-<div class="timeline-item">
-<div class="timeline-date">B.Tech</div>
-<div class="timeline-title">Computer Science and Engineering</div>
-<div class="timeline-org">RGUKT Nuzvid — CGPA 7.9</div>
-</div>
-
-</div>
+<p>
+University at Buffalo (SUNY)
+</p>
 
 
-<div>
+<h3>Bachelor of Technology in Computer Science and Engineering</h3>
 
-<div class="skill-tags">
+<p>
+RGUKT Nuzvid
+</p>
 
-<span class="skill-tag">Java</span>
-<span class="skill-tag">Spring Boot</span>
-<span class="skill-tag">Kafka</span>
-<span class="skill-tag">REST APIs</span>
-<span class="skill-tag">Microservices</span>
-<span class="skill-tag">Python</span>
-<span class="skill-tag">SQL</span>
-<span class="skill-tag">Machine Learning</span>
-<span class="skill-tag">PySpark</span>
-<span class="skill-tag">GitHub</span>
-<span class="skill-tag">Jira</span>
-<span class="skill-tag">ServiceNow</span>
-<span class="skill-tag">HTML</span>
-<span class="skill-tag">CSS</span>
-<span class="skill-tag">JavaScript</span>
 
-</div>
+<p>
 
-</div>
+During my undergraduate studies, I developed three academic websites using HTML, CSS, and JavaScript. These projects helped me understand webpage structure, layout design, styling techniques, and frontend interaction logic.
 
-</div>
+</p>
 
 </section>
 
 
-<section id="portfolio">
 
-<h2 class="section-title">Projects</h2>
+<section id="experience">
 
-<div class="portfolio-grid">
+<h2>Professional Experience</h2>
 
-<div class="project-card">
-<h3>Allianz Arcnet Kafka Messaging System</h3>
-Worked on distributed Kafka messaging architecture supporting communication between enterprise backend microservices.
-Implemented Kafka producers and consumers and supported testing and debugging workflows.
-</div>
+<h3>Tata Consultancy Services — Client: Allianz</h3>
 
-<div class="project-card">
-<h3>Teaching Style Classification</h3>
-Developed machine learning classification system for lecture videos using preprocessing feature extraction and classification models.
-</div>
+<ul>
 
-<div class="project-card">
+<li>Developed backend services using Java and Spring Boot</li>
+
+<li>Designed REST APIs for enterprise application communication</li>
+
+<li>Worked with Apache Kafka producers and consumers for messaging workflows</li>
+
+<li>Supported microservices-based backend architecture</li>
+
+<li>Used GitHub for version control and collaborative development</li>
+
+<li>Used Jira for Agile sprint tracking and issue management</li>
+
+<li>Participated in testing support activities and debugging workflows</li>
+
+<li>Resolved production issues to improve application reliability and performance</li>
+
+</ul>
+
+</section>
+
+
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+
+<h3>Industry Project — Allianz Arcnet Kafka Messaging System</h3>
+
+<p>
+
+At Allianz, I worked on a Kafka-based messaging platform that supported communication between distributed enterprise backend services. Apache Kafka allowed asynchronous message exchange between microservices and improved scalability and reliability across system workflows.
+
+</p>
+
+<p>
+
+My responsibilities included supporting Kafka producers and consumers, assisting REST API integrations, debugging messaging pipelines, supporting testing activities, and improving backend service stability during development and production support phases.
+
+</p>
+
+
+
+<h3>Video Classification Based on Teaching Style</h3>
+
+<p>
+
+Developed a machine learning-based system to classify teaching styles from lecture videos using preprocessing techniques, feature extraction methods, and classification algorithms.
+
+</p>
+
+
+
 <h3>Spotify Song Popularity Prediction</h3>
-Built PySpark classification pipeline predicting song popularity using Logistic Regression and Random Forest models.
-</div>
+
+<p>
+
+Built classification models using PySpark to predict song popularity levels based on audio feature datasets. I performed data cleaning, feature engineering, and compared Logistic Regression and Random Forest models.
+
+</p>
+
+
+
+<h3>College Web Development Projects</h3>
+
+<p>
+
+Developed three academic websites using HTML, CSS, and JavaScript that improved my understanding of webpage structure, styling techniques, and frontend interaction logic.
+
+</p>
+
+</section>
+
+
+
+<section id="skills">
+
+<h2>Technical Skills</h2>
+
+<div class="skill-box">
+
+<span>Java</span>
+<span>Spring Boot</span>
+<span>REST APIs</span>
+<span>Microservices</span>
+<span>Apache Kafka</span>
+<span>Kafka Producers</span>
+<span>Kafka Consumers</span>
+<span>Python</span>
+<span>SQL</span>
+<span>PySpark</span>
+<span>Machine Learning</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>GitHub</span>
+<span>Jira</span>
+<span>ServiceNow</span>
+<span>AWS Basics</span>
+<span>Testing Support</span>
+<span>Agile Development</span>
 
 </div>
 
 </section>
+
 
 
 <section id="future">
 
-<h2 class="section-title">Future Interests</h2>
+<h2>Future Interests</h2>
 
 <p>
 
-I am interested in backend engineering roles involving Java microservices architecture Apache Kafka distributed messaging systems and Machine Learning integration.
+I am interested in backend engineering roles where Java microservices, Apache Kafka messaging systems, and Machine Learning techniques are integrated to support scalable enterprise applications.
 
-My long-term goal is to work on intelligent enterprise backend systems where software engineering and Artificial Intelligence solutions are combined in production environments.
+</p>
+
+<p>
+
+My long-term goal is to continue strengthening my backend development expertise while expanding my knowledge in Artificial Intelligence and applying Machine Learning solutions in production-level systems.
 
 </p>
 
 </section>
 
 
-<section class="contact-section" id="contact">
 
-<h2 class="section-title">Contact</h2>
+<section id="contact">
 
-<a href="mailto:svaddi3@buffalo.edu" class="contact-card">
-Email
+<h2>Contact</h2>
+
+<p>Email: svaddi3@buffalo.edu</p>
+
+<p>
+GitHub:
+<a href="https://github.com/SrilakshmiV23" target="_blank">
+github.com/SrilakshmiV23
 </a>
+</p>
 
-<a href="https://github.com/SrilakshmiV23" target="_blank" class="contact-card">
-GitHub
+<p>
+LinkedIn:
+<a href="https://www.linkedin.com/in/sri-lakshmi-vaddi-829142359/" target="_blank">
+linkedin.com/in/sri-lakshmi-vaddi
 </a>
-
-<a href="https://www.linkedin.com/in/sri-lakshmi-vaddi-829142359/" target="_blank" class="contact-card">
-LinkedIn
-</a>
+</p>
 
 </section>
 
 
+
 <footer>
 
-© 2026 Sri Lakshmi Vaddi
+<p>© Sri Lakshmi Vaddi | Portfolio Website</p>
 
 </footer>
 
 
 </body>
+
 </html>
