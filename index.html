@@ -8,45 +8,48 @@
 
 <style>
 
+/* FULL PAGE BACKGROUND COLOR THEME */
+
 body{
 font-family:'Nunito', sans-serif;
 margin:0;
-color:#333;
+color:#2c3e50;
 line-height:1.8;
-background:
-radial-gradient(circle at 10% 20%, rgba(31,60,136,0.12), transparent 40%),
-radial-gradient(circle at 90% 80%, rgba(77,208,225,0.12), transparent 40%),
-linear-gradient(to bottom right, #f4f7fb, #e8eff8);
+
+background:linear-gradient(135deg,#dbeafe,#e0f2fe,#eef2ff);
 }
 
+/* HEADER */
+
 header{
-background:linear-gradient(135deg,#1f3c88,#2c3e50,#1a5276);
+background:linear-gradient(135deg,#1f3c88,#2c3e50);
 color:white;
-padding:70px 40px;
+padding:75px 40px;
 text-align:center;
 }
 
 header h1{
 font-family:'Merriweather', serif;
-font-size:2.8rem;
+font-size:2.9rem;
 margin-bottom:12px;
 }
 
 header p{
 max-width:850px;
 margin:auto;
-font-size:16px;
+font-size:17px;
 line-height:1.9;
 }
 
+/* NAVIGATION BAR */
+
 nav{
-background:#16222e;
+background:#0f172a;
 padding:16px;
 text-align:center;
 position:sticky;
 top:0;
 z-index:100;
-box-shadow:0 3px 10px rgba(0,0,0,0.2);
 }
 
 nav a{
@@ -56,267 +59,380 @@ margin:0 18px;
 font-weight:700;
 letter-spacing:1px;
 text-transform:uppercase;
-transition:0.3s;
+transition:.3s;
 }
 
 nav a:hover{
-color:#4dd0e1;
+color:#38bdf8;
 }
 
+/* SECTION STYLE */
+
 section{
-background:rgba(255,255,255,0.97);
+background:white;
 width:85%;
 margin:35px auto;
 padding:40px;
-border-radius:14px;
-border-left:6px solid #1f3c88;
-box-shadow:0 8px 28px rgba(0,0,0,0.07);
-transition:0.3s;
+border-radius:16px;
+
+box-shadow:0 12px 35px rgba(0,0,0,0.08);
+
+border-top:6px solid #1f3c88;
+
+transition:.3s;
 }
 
 section:hover{
 transform:translateY(-4px);
-box-shadow:0 12px 35px rgba(0,0,0,0.12);
 }
+
+/* HEADINGS */
 
 h2{
 color:#1f3c88;
-border-bottom:2px solid #e5e8ef;
+border-bottom:2px solid #e2e8f0;
 padding-bottom:10px;
 font-family:'Merriweather', serif;
 }
 
 h3{
-color:#2c3e50;
+color:#334155;
 margin-top:22px;
 }
 
-p{
-font-size:15px;
-}
+/* SKILLS BADGES */
 
 .skills span{
+
 display:inline-block;
+
 background:#1f3c88;
+
 color:white;
-padding:8px 18px;
+
+padding:9px 18px;
+
 margin:6px;
+
 border-radius:25px;
+
 font-size:13px;
+
 font-weight:700;
-transition:0.3s;
+
+transition:.3s;
+
 }
 
 .skills span:hover{
-background:#4dd0e1;
-color:#123;
-transform:scale(1.05);
+
+background:#38bdf8;
+
+transform:scale(1.06);
+
 }
 
+/* CONTACT LINKS */
+
 #contact a{
+
 color:#1f3c88;
+
 font-weight:700;
+
 text-decoration:none;
+
 }
 
 #contact a:hover{
-color:#4dd0e1;
+
+color:#38bdf8;
+
 }
 
+/* FOOTER */
+
 footer{
-background:#2c3e50;
+
+background:#1e293b;
+
 color:white;
+
 text-align:center;
-padding:25px;
-margin-top:30px;
+
+padding:30px;
+
+margin-top:40px;
+
 }
 
 footer span{
-color:#4dd0e1;
+
+color:#38bdf8;
+
 }
 
+/* MOBILE SUPPORT */
+
 @media(max-width:768px){
+
 section{
+
 width:94%;
+
 padding:25px;
+
 }
 
 header{
-padding:45px 25px;
+
+padding:50px 25px;
+
 }
 
 header h1{
+
 font-size:2rem;
+
 }
 
 nav a{
+
 display:inline-block;
-margin:6px 8px;
+
+margin:8px;
+
 font-size:12px;
+
 }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
 <header>
+
 <h1>Sri Lakshmi Vaddi</h1>
 
 <p>
+
 Java Backend Developer with experience building scalable microservices using Spring Boot and Apache Kafka.<br>
+
 MS Artificial Intelligence Student — University at Buffalo<br><br>
+
 Interested in developing intelligent backend systems that integrate Artificial Intelligence, Machine Learning, and Natural Language Processing with Java-based microservices using cloud platforms such as AWS and Azure.
+
 </p>
+
 </header>
 
+
+
 <nav>
+
 <a href="#resume">Resume</a>
+
 <a href="#portfolio">Portfolio</a>
+
 <a href="#interests">What I Like</a>
+
 <a href="#contact">Contact</a>
+
 </nav>
 
+
+
 <section id="resume">
+
 <h2>Resume</h2>
 
 <h3>Professional Profile</h3>
 
 <p>
-I am a Java Backend Developer with enterprise application development experience at Tata Consultancy Services, where I worked for the Allianz client building scalable backend services using Java and Spring Boot. I designed REST APIs that supported communication between distributed enterprise systems and contributed to microservices-based application workflows.
+
+I am a Java Backend Developer with enterprise application development experience at Tata Consultancy Services working for the Allianz client. I developed scalable backend services using Java and Spring Boot and designed REST APIs supporting communication between distributed enterprise systems.
+
 </p>
 
 <p>
-I worked extensively with Apache Kafka messaging systems supporting producers and consumers that enabled asynchronous communication between backend services. My responsibilities included supporting message validation workflows, retry handling mechanisms, debugging messaging pipelines, and resolving production-level issues to improve system reliability.
+
+I worked extensively with Apache Kafka messaging systems supporting producer and consumer workflows that enabled asynchronous communication between backend services. My responsibilities included debugging messaging pipelines, supporting retry workflows, validation handling, and resolving production issues to improve system reliability.
+
 </p>
 
 <p>
-I also collaborated with cloud and DevOps teams supporting application deployment activities in AWS environments and participated in Agile development workflows using GitHub and Jira. Currently, I am pursuing a Master’s degree in Artificial Intelligence at the University at Buffalo to strengthen my ability to build intelligent backend systems that integrate Machine Learning, NLP, and scalable enterprise architectures.
+
+I collaborated with Agile development teams and supported cloud deployment activities in AWS environments using GitHub and Jira. Currently, I am pursuing a Master’s degree in Artificial Intelligence at the University at Buffalo to strengthen my ability to build intelligent backend systems integrating Machine Learning and NLP capabilities into scalable enterprise architectures.
+
 </p>
+
+
 
 <h3>Education</h3>
 
 <p>
+
 <strong>Master of Science in Artificial Intelligence</strong><br>
+
 University at Buffalo (SUNY)
+
 </p>
 
 <p>
+
 <strong>Bachelor of Technology in Computer Science and Engineering</strong><br>
+
 RGUKT Nuzvid
+
 </p>
+
+
 
 <h3>Technical Skills</h3>
 
 <div class="skills">
+
 <span>Java</span>
+
 <span>Spring Boot</span>
+
 <span>REST APIs</span>
+
 <span>Microservices</span>
+
 <span>Apache Kafka</span>
-<span>Kafka Producers</span>
-<span>Kafka Consumers</span>
+
 <span>Python</span>
+
 <span>SQL</span>
-<span>PySpark</span>
+
 <span>Machine Learning</span>
+
 <span>Artificial Intelligence</span>
+
 <span>Natural Language Processing</span>
+
 <span>HTML</span>
+
 <span>CSS</span>
+
 <span>JavaScript</span>
+
 <span>GitHub</span>
+
 <span>Jira</span>
-<span>ServiceNow</span>
-<span>AWS Exposure</span>
-<span>Azure Learning</span>
-<span>Docker Learning</span>
-<span>DevOps Learning</span>
+
+<span>AWS Cloud</span>
+
 </div>
 
 </section>
 
+
+
 <section id="portfolio">
+
 <h2>Portfolio</h2>
 
 <h3>Enterprise Project — Allianz Arcnet Kafka Messaging Platform</h3>
 
 <p>
-At Allianz, I worked on the Arcnet Kafka messaging platform that supported communication between distributed enterprise backend services using event-driven architecture. Apache Kafka enabled asynchronous message exchange between microservices so that applications could communicate reliably without depending on synchronous service availability.
+
+At Allianz, I worked on the Arcnet Kafka messaging platform supporting communication between distributed enterprise backend services using event-driven microservices architecture.
+
 </p>
 
 <p>
-Within this system, Kafka producers were responsible for publishing events generated by backend services, and Kafka consumers processed those events to trigger downstream workflows. This architecture improved scalability, fault tolerance, and system responsiveness across enterprise applications.
+
+Kafka producers published backend events and consumers processed those events to trigger downstream workflows, improving reliability and scalability across services.
+
 </p>
 
-<p>
-My responsibilities included supporting Kafka producer and consumer integration, assisting REST API communication between services, validating message processing workflows, supporting retry and error-handling logic, debugging messaging pipelines, and resolving production-level issues to maintain backend system stability.
-</p>
+
 
 <h3>Machine Learning Project — Video Classification Based on Teaching Style</h3>
 
 <p>
-During my undergraduate studies, I developed a machine learning-based video classification system that automatically identified teaching styles from recorded lecture videos. The objective was to analyze instructional patterns and support education analytics by recognizing different teaching approaches.
+
+I developed a machine learning-based system that classified teaching styles from lecture video datasets using feature extraction and supervised learning techniques.
+
 </p>
 
-<p>
-The project involved preprocessing lecture video datasets, extracting meaningful visual and temporal features from frames, and applying classification algorithms to categorize teaching styles based on instructor behavior and presentation techniques.
-</p>
 
-<p>
-Through this project, I gained experience working with machine learning workflows including dataset preparation, feature engineering, model training, evaluation, and interpretation of classification results.
-</p>
 
 <h3>Distributed Data Project — Spotify Song Popularity Prediction Using PySpark</h3>
 
 <p>
-In this project, I built classification models using PySpark to predict song popularity levels such as Low, Medium, and High based on audio feature datasets. I performed dataset cleaning, feature engineering, and trained Logistic Regression and Random Forest classification models to compare prediction performance and select the best-performing approach.
+
+Built classification models using PySpark to predict popularity levels based on song audio features.
+
 </p>
+
+
 
 <h3>Web Development Projects</h3>
 
 <p>
-I designed and developed three academic websites using HTML, CSS, and JavaScript focusing on webpage structure, layout styling, responsive design basics, and clean user interface presentation. These projects helped me build the foundation required to create and publish this portfolio website using GitHub Pages.
+
+Developed three academic websites using HTML, CSS, and JavaScript focusing on layout structure and responsive design.
+
 </p>
 
 </section>
 
+
+
 <section id="interests">
+
 <h2>What I Like to Do</h2>
 
 <p>
-I enjoy building scalable backend systems using Java microservices architecture and Apache Kafka messaging platforms that support reliable communication between distributed enterprise services.
+
+I enjoy building scalable backend systems using Java microservices architecture and Apache Kafka messaging platforms.
+
 </p>
 
 <p>
-I am especially interested in applying Artificial Intelligence, Machine Learning, and Natural Language Processing techniques within backend systems to build intelligent services that support automation, predictive analytics, text processing, recommendation systems, and conversational system integrations.
+
+I am especially interested in applying Artificial Intelligence, Machine Learning, and Natural Language Processing techniques within backend systems.
+
 </p>
 
 <p>
-Along with my Master’s studies in Artificial Intelligence, I am expanding my knowledge of Docker containerization, DevOps workflows, AWS Cloud services, and Microsoft Azure deployment environments to understand how production-level backend applications and Machine Learning systems are deployed, monitored, and scaled in modern cloud platforms.
+
+Currently expanding knowledge in Docker, DevOps workflows, AWS Cloud services, and Microsoft Azure deployment environments.
+
 </p>
 
 <p>
-My long-term goal is to design scalable backend platforms where Java microservices integrate with Artificial Intelligence and NLP-based models to support intelligent workflows in modern cloud-based production environments.
+
+My long-term goal is to design scalable backend platforms where Java microservices integrate with AI and NLP-based models in modern cloud environments.
+
 </p>
 
 </section>
 
+
+
 <section id="contact">
+
 <h2>Contact</h2>
 
 <p>📧 Email: svaddi3@buffalo.edu</p>
 
-<p>
-💻 GitHub:
+<p>💻 GitHub:
 <a href="https://github.com/SrilakshmiV23" target="_blank">
 github.com/SrilakshmiV23
 </a>
 </p>
 
-<p>
-🔗 LinkedIn:
+<p>🔗 LinkedIn:
 <a href="https://www.linkedin.com/in/sri-lakshmi-vaddi-829142359/" target="_blank">
 linkedin.com/in/sri-lakshmi-vaddi
 </a>
@@ -324,9 +440,15 @@ linkedin.com/in/sri-lakshmi-vaddi
 
 </section>
 
+
+
 <footer>
+
 <p>© <span>Sri Lakshmi Vaddi</span> — Resume Portfolio Website</p>
+
 </footer>
 
+
 </body>
+
 </html>
