@@ -10,15 +10,17 @@
 body{
 font-family: Arial, sans-serif;
 margin:0;
-background:#f4f6f8;
+background:#eef2f7;
 color:#333;
 line-height:1.7;
 }
 
+/* HEADER */
+
 header{
-background:#263849;
+background:linear-gradient(to right,#1f3c88,#2c3e50);
 color:white;
-padding:40px;
+padding:50px;
 text-align:center;
 }
 
@@ -26,68 +28,97 @@ header h1{
 margin-bottom:10px;
 }
 
+/* NAVBAR */
+
 nav{
 background:#1d2b38;
-padding:12px;
+padding:15px;
 text-align:center;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:0 14px;
+margin:0 15px;
 font-weight:bold;
+transition:0.3s;
 }
 
 nav a:hover{
-color:#85d6c7;
+color:#4dd0e1;
 }
+
+/* SECTIONS */
 
 section{
 background:white;
 width:85%;
-margin:25px auto;
+margin:30px auto;
 padding:30px;
-border-radius:10px;
-box-shadow:0 0 8px lightgray;
+border-radius:12px;
+box-shadow:0 5px 12px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
+section:hover{
+transform:scale(1.01);
+}
+
+/* HEADINGS */
+
 h2{
-color:#263849;
-border-bottom:2px solid #ddd;
+color:#1f3c88;
+border-bottom:2px solid #e0e0e0;
 padding-bottom:8px;
 }
 
 h3{
-color:#34495e;
+color:#2c3e50;
 }
 
-ul{
-line-height:1.8;
-}
+/* SKILLS */
 
 .skills span{
 display:inline-block;
-background:#263849;
+background:#1f3c88;
 color:white;
-padding:7px 13px;
-border-radius:18px;
-margin:5px;
+padding:8px 14px;
+border-radius:20px;
+margin:6px;
 font-size:14px;
+transition:0.3s;
 }
+
+.skills span:hover{
+background:#4dd0e1;
+}
+
+/* FOOTER */
 
 footer{
-background:#263849;
+background:#2c3e50;
 color:white;
 text-align:center;
-padding:18px;
+padding:20px;
+margin-top:30px;
 }
 
-a{
-color:#1a7f72;
+/* MOBILE SUPPORT */
+
+@media(max-width:768px){
+
+section{
+width:95%;
+}
+
+header{
+padding:35px;
+}
+
 }
 
 </style>
+
 </head>
 
 
@@ -100,7 +131,7 @@ color:#1a7f72;
 
 <p>
 
-Java Backend Developer with enterprise experience in Spring Boot, REST APIs, and Apache Kafka  
+Java Backend Developer | Spring Boot | REST APIs | Apache Kafka  
 MS Artificial Intelligence Student — University at Buffalo  
 
 Interested in building scalable backend systems integrated with Machine Learning and Cloud technologies
@@ -131,19 +162,19 @@ Interested in building scalable backend systems integrated with Machine Learning
 
 <p>
 
-I am a Java Backend Developer with professional experience at Tata Consultancy Services, where I worked on enterprise backend systems for the Allianz client. My work focused on developing scalable backend services using Java and Spring Boot and designing REST APIs to support communication between distributed applications.
+I am a Java Backend Developer with enterprise application development experience at Tata Consultancy Services, where I worked for the Allianz client building scalable backend services using Java and Spring Boot. I designed REST APIs that supported communication between distributed enterprise systems and contributed to microservices-based application workflows.
 
 </p>
 
 <p>
 
-During my work on the Allianz messaging platform, I supported Apache Kafka producers and consumers that enabled asynchronous communication between microservices. I also contributed to debugging backend workflows, supporting testing activities, resolving production issues, and improving system reliability in Agile development environments using GitHub and Jira.
+I worked extensively with Apache Kafka messaging systems supporting producers and consumers that enabled asynchronous communication between backend services. My responsibilities included supporting message validation workflows, retry handling mechanisms, debugging messaging pipelines, and resolving production-level issues to improve system reliability.
 
 </p>
 
 <p>
 
-Currently, I am pursuing a Master’s degree in Artificial Intelligence at the University at Buffalo. My goal is to combine backend engineering experience with Machine Learning, cloud platforms, Docker-based deployments, and DevOps practices to build intelligent and scalable production-level systems.
+I also collaborated with cloud and DevOps teams supporting application deployment activities in AWS environments and participated in Agile development workflows using GitHub and Jira. Currently, I am pursuing a Master’s degree in Artificial Intelligence at the University at Buffalo to strengthen my ability to build intelligent backend systems that integrate Machine Learning with scalable enterprise architectures.
 
 </p>
 
@@ -182,16 +213,17 @@ RGUKT Nuzvid
 <span>SQL</span>
 <span>PySpark</span>
 <span>Machine Learning</span>
+<span>Artificial Intelligence</span>
 <span>HTML</span>
 <span>CSS</span>
 <span>JavaScript</span>
 <span>GitHub</span>
 <span>Jira</span>
 <span>ServiceNow</span>
-<span>AWS Basics</span>
-<span>Azure Interest</span>
-<span>Docker Interest</span>
-<span>DevOps Interest</span>
+<span>AWS Exposure</span>
+<span>Azure Learning</span>
+<span>Docker Learning</span>
+<span>DevOps Learning</span>
 
 </div>
 
@@ -209,13 +241,19 @@ RGUKT Nuzvid
 
 <p>
 
-At Allianz, I worked on a Kafka-based enterprise messaging platform that enabled reliable communication between distributed backend microservices using event-driven architecture. Apache Kafka allowed asynchronous message exchange between services, improving system scalability and performance across enterprise workflows.
+At Allianz, I worked on the Arcnet Kafka messaging platform that supported communication between distributed enterprise backend services using event-driven architecture. Apache Kafka enabled asynchronous message exchange between microservices so that applications could communicate reliably without depending on synchronous service availability.
 
 </p>
 
 <p>
 
-My responsibilities included supporting Kafka producers and consumers, assisting REST API integration between services, debugging messaging pipelines, supporting testing workflows, and resolving production-level issues to maintain system stability.
+Within this system, Kafka producers were responsible for publishing events generated by backend services, and Kafka consumers processed those events to trigger downstream workflows. This architecture improved scalability, fault tolerance, and system responsiveness across enterprise applications.
+
+</p>
+
+<p>
+
+My responsibilities included supporting Kafka producer and consumer integration, assisting REST API communication between services, validating message processing workflows, supporting retry and error-handling logic, debugging messaging pipelines, and resolving production-level issues to maintain backend system stability.
 
 </p>
 
@@ -225,17 +263,29 @@ My responsibilities included supporting Kafka producers and consumers, assisting
 
 <p>
 
-Developed a Machine Learning-based system that classifies lecture videos based on teaching style using preprocessing techniques, feature extraction, and classification algorithms. This project helped me understand how AI techniques can support education analytics and automated learning insights.
+During my undergraduate studies, I developed a machine learning-based video classification system that automatically identified teaching styles from recorded lecture videos. The objective of this project was to analyze instructional patterns and support education analytics by recognizing different teaching approaches.
+
+</p>
+
+<p>
+
+The project involved preprocessing lecture video datasets, extracting meaningful visual and temporal features from frames, and applying classification algorithms to categorize teaching styles based on instructor behavior and presentation techniques. This helped me understand how feature extraction and supervised learning models can be applied to real-world multimedia datasets.
+
+</p>
+
+<p>
+
+Through this project, I gained experience working with machine learning workflows including dataset preparation, feature engineering, model training, evaluation, and interpretation of classification results.
 
 </p>
 
 
 
-<h3>Distributed Data Project — Spotify Song Popularity Prediction using PySpark</h3>
+<h3>Distributed Data Project — Spotify Song Popularity Prediction Using PySpark</h3>
 
 <p>
 
-Built classification models using PySpark to predict song popularity categories based on audio feature datasets. I performed dataset cleaning, feature engineering, and compared Logistic Regression and Random Forest models to evaluate performance.
+In this project, I built classification models using PySpark to predict song popularity levels such as Low, Medium, and High based on audio feature datasets. I performed dataset cleaning, feature engineering, and trained Logistic Regression and Random Forest classification models to compare prediction performance and select the best-performing approach.
 
 </p>
 
@@ -245,7 +295,7 @@ Built classification models using PySpark to predict song popularity categories 
 
 <p>
 
-Developed three academic websites using HTML, CSS, and JavaScript. These projects strengthened my understanding of webpage structure, responsive layout design, and frontend interaction logic.
+I developed three academic websites using HTML, CSS, and JavaScript to strengthen my understanding of webpage structure, layout styling techniques, and frontend interaction logic. These projects helped me build the foundation required to create and publish this portfolio website using GitHub Pages.
 
 </p>
 
@@ -259,25 +309,19 @@ Developed three academic websites using HTML, CSS, and JavaScript. These project
 
 <p>
 
-I enjoy building backend systems that support scalable enterprise applications and reliable communication between distributed services. I am especially interested in working with Java microservices and Apache Kafka messaging platforms.
+I enjoy building backend systems that support scalable enterprise applications and reliable communication between distributed services using Java microservices architecture and Apache Kafka messaging platforms.
 
 </p>
 
 <p>
 
-I am also passionate about Artificial Intelligence and Machine Learning because I want to understand how intelligent models can support automation, prediction systems, and real-time decision-making applications.
+I am especially interested in Artificial Intelligence and Machine Learning because I want to integrate intelligent prediction models into backend systems that support automation, decision-making, and real-time analytics pipelines.
 
 </p>
 
 <p>
 
-Currently, I am expanding my knowledge of Docker, DevOps workflows, AWS Cloud, and Microsoft Azure to better understand how backend systems are deployed, monitored, and scaled in production environments.
-
-</p>
-
-<p>
-
-My long-term goal is to work on intelligent backend platforms that combine strong software engineering practices with Artificial Intelligence technologies.
+Currently, I am expanding my knowledge of Docker containerization, DevOps workflows, AWS Cloud services, and Microsoft Azure deployment environments to better understand how production-level backend applications are deployed, monitored, and scaled in modern enterprise environments.
 
 </p>
 
