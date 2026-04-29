@@ -1,347 +1,749 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>Sri Lakshmi Vaddi | Portfolio Website</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Lakshmi Vaddi — AI & Backend Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --navy: #0d1b2a;
+    --teal: #1a9e8f;
+    --teal-light: #22c5b4;
+    --cream: #f7f3ee;
+    --warm-gray: #e8e3dc;
+    --text: #2c2c2c;
+    --muted: #6b7280;
+    --white: #ffffff;
+    --card-bg: #ffffff;
+    --accent: #e8622a;
+  }
 
-body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f4f6f8;
-color:#333;
-line-height:1.7;
-}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-header{
-background:#1f2d3d;
-color:white;
-padding:40px;
-text-align:center;
-}
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-section{
-background:white;
-margin:25px auto;
-padding:30px;
-width:85%;
-border-radius:12px;
-box-shadow:0px 0px 10px lightgray;
-}
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(13, 27, 42, 0.96);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 60px;
+    border-bottom: 1px solid rgba(26,158,143,0.2);
+  }
 
-h2{
-color:#1f2d3d;
-border-bottom:2px solid #e5e5e5;
-padding-bottom:8px;
-}
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--teal-light);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
 
-h3{
-color:#34495e;
-}
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal-light); }
 
-footer{
-background:#1f2d3d;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:30px;
-}
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
 
-.highlight{
-font-weight:bold;
-color:#1f2d3d;
-}
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(26,158,143,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
 
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: 30%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(232,98,42,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-content { max-width: 900px; position: relative; z-index: 1; }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(26,158,143,0.15);
+    border: 1px solid rgba(26,158,143,0.4);
+    color: var(--teal-light);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 8px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 span { color: var(--teal-light); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255,255,255,0.55);
+    margin: 20px 0 40px;
+    max-width: 600px;
+    font-weight: 300;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-ctas {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn {
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+  }
+
+  .btn-primary { background: var(--teal); color: white; }
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+  }
+  .btn-outline:hover { border-color: var(--teal-light); color: var(--teal-light); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex; gap: 48px; margin-top: 64px; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--teal-light);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  section { padding: 100px 60px; }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 580px;
+    margin-bottom: 60px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .about-section { background: var(--navy); color: white; }
+  .about-section .section-title { color: white; }
+  .about-section .section-intro { color: rgba(255,255,255,0.55); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .about-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 36px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .about-card:hover {
+    border-color: rgba(26,158,143,0.4);
+    transform: translateY(-4px);
+  }
+
+  .about-card-icon {
+    width: 48px; height: 48px;
+    background: rgba(26,158,143,0.15);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .about-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .about-card p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .resume-section { background: var(--cream); }
+
+  .resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .resume-col h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+
+  .timeline { position: relative; padding-left: 20px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--teal), transparent);
+  }
+
+  .timeline-item { position: relative; margin-bottom: 36px; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px; top: 8px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 3px rgba(26,158,143,0.2);
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    color: var(--teal);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .timeline-title { font-weight: 600; font-size: 1rem; color: var(--navy); margin-bottom: 2px; }
+  .timeline-org { font-size: 0.85rem; color: var(--muted); margin-bottom: 8px; }
+  .timeline-desc { font-size: 0.9rem; color: var(--text); line-height: 1.7; }
+
+  .skills-wrap { display: flex; flex-direction: column; gap: 14px; }
+
+  .skill-row-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--navy);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .skill-bar {
+    height: 6px;
+    background: var(--warm-gray);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    border-radius: 3px;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .skill-tag {
+    background: var(--navy);
+    color: rgba(255,255,255,0.8);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+  }
+
+  .portfolio-section { background: white; }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .project-card {
+    background: var(--cream);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--warm-gray);
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(13,27,42,0.12);
+  }
+
+  .project-thumb {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+  }
+
+  .thumb-kafka { background: linear-gradient(135deg, #0d1b2a 0%, #1a3a4a 100%); }
+  .thumb-spotify { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+  .thumb-video { background: linear-gradient(135deg, #1a2a1a 0%, #1e3a2e 100%); }
+  .thumb-web { background: linear-gradient(135deg, #2a1a2a 0%, #3a1a3a 100%); }
+
+  .project-thumb-label {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: rgba(26,158,143,0.9);
+    color: white;
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .project-body { padding: 24px; }
+
+  .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tech-badge {
+    background: rgba(26,158,143,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(26,158,143,0.25);
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .project-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .project-body p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--teal);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 10px; }
+
+  .contact-section { background: var(--navy); text-align: center; }
+  .contact-section .section-title { color: white; }
+  .contact-section .section-intro { color: rgba(255,255,255,0.5); margin: 0 auto 48px; }
+
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+
+  .contact-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px 36px;
+    text-decoration: none;
+    transition: all 0.2s;
+    min-width: 180px;
+  }
+
+  .contact-card:hover {
+    background: rgba(26,158,143,0.1);
+    border-color: rgba(26,158,143,0.4);
+    transform: translateY(-4px);
+  }
+
+  .contact-card-icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+  .contact-card-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .contact-card-value { font-size: 0.9rem; color: rgba(255,255,255,0.85); }
+
+  footer {
+    background: #060f18;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 24px;
+    font-size: 0.82rem;
+  }
+  footer span { color: var(--teal); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 24px; }
+    .nav-links { gap: 20px; }
+    section { padding: 70px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .resume-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .contact-cards { flex-direction: column; align-items: center; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-links { display: none; }
+  }
 </style>
-
 </head>
-
 <body>
 
+<nav>
+  <div class="nav-logo">SLV</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-<header>
-
-<h1>Sri Lakshmi Vaddi</h1>
-
-<p>
-
-Java Backend Developer (4.2 Years Experience) |
-Spring Boot | Kafka Messaging Systems |
-MS Artificial Intelligence Student |
-Interested in Backend Systems with AI & Machine Learning Integration
-
-</p>
-
-<p>
-
-Experienced in enterprise backend development at Tata Consultancy Services (Client: Allianz)
-and currently expanding skills in Machine Learning and intelligent data-driven systems.
-
-</p>
-
-</header>
-
-
-<section>
-
-<h2>Professional Profile</h2>
-
-<p>
-
-I am a Java Backend Developer with 4.2 years of professional experience at Tata Consultancy Services working for Allianz client,
-where I contributed to enterprise backend applications built using Java, Spring Boot, REST APIs, and Apache Kafka messaging systems.
-
-</p>
-
-<p>
-
-My responsibilities included developing backend microservices, supporting distributed communication between services using Kafka,
-participating in testing activities, resolving production issues, working with GitHub version control,
-tracking development tasks through Jira, and collaborating with cross-functional Agile teams.
-
-</p>
-
-<p>
-
-Currently, I am pursuing a Master’s degree in Artificial Intelligence at the University at Buffalo.
-My goal is to combine my backend engineering experience with Artificial Intelligence and Machine Learning knowledge
-to build intelligent and scalable backend applications.
-
-</p>
-
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">Open to Backend + AI Roles · 2026</div>
+    <h1>Sri Lakshmi<br><span>Vaddi</span></h1>
+    <p class="hero-sub">Java Backend Engineer turned AI grad student — I build scalable systems and I'm learning to make them intelligent.</p>
+    <div class="hero-ctas">
+      <a href="#portfolio" class="btn btn-primary">See My Work</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">4.2</span>
+        <span class="stat-label">Years at TCS</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">MS</span>
+        <span class="stat-label">AI @ UB</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<section>
-
-<h2>Career Objective</h2>
-
-<p>
-
-My career objective is to work as a Backend Software Engineer developing scalable applications
-where Java microservices, distributed messaging systems like Kafka, and Machine Learning models
-can be integrated to solve real-world problems.
-
-</p>
-
-<p>
-
-I am especially interested in learning modern backend architectures, event-driven systems,
-real-time data processing pipelines, and practical deployment of AI-enabled backend solutions in production environments.
-
-</p>
-
+<!-- WHAT I LIKE TO DO -->
+<section class="about-section" id="about">
+  <span class="section-label">Who I Am</span>
+  <h2 class="section-title">What I Like to Do</h2>
+  <p class="section-intro">I am a backend engineer who got curious about AI and decided to do something about it. Here is what genuinely excites me.</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-card-icon">⚙️</div>
+      <h3>Building Systems That Don't Break</h3>
+      <p>There is something deeply satisfying about a backend service that handles thousands of events without complaint. At Allianz, I spent years making Kafka pipelines reliable. I love tracing a bug through distributed logs until I find the exact moment something went wrong — and fixing it cleanly.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">🤖</div>
+      <h3>Teaching Machines to Be Useful</h3>
+      <p>My Bachelor's project — classifying teaching styles from lecture videos — was the moment I realized ML isn't just theory. Watching a model actually distinguish between teaching styles felt like magic. Now I want to bring that same intelligence into production backend systems.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">📊</div>
+      <h3>Finding Patterns in Data</h3>
+      <p>The Spotify project stuck with me. Audio features predicting whether a song becomes popular? I spent way too long exploring feature combinations. I like asking "what does this data actually tell us?" before touching a model.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">🔗</div>
+      <h3>The Gap Between AI Research and Real Products</h3>
+      <p>Most ML models never make it to production. I want to be the person who bridges that gap — someone who understands both the Spring Boot microservice and the model it needs to serve. That intersection is where I want to build my career.</p>
+    </div>
+  </div>
 </section>
 
-
-<section>
-
-<h2>Education</h2>
-
-<p>
-
-<span class="highlight">MS in Artificial Intelligence</span>  
-University at Buffalo (SUNY Buffalo)
-
-</p>
-
-<p>
-
-<span class="highlight">B.Tech in Computer Science and Engineering</span>  
-RGUKT Nuzvid — CGPA: 7.9
-
-</p>
-
-<p>
-
-During my undergraduate studies, I developed strong foundations in programming, machine learning basics,
-and web development. I also developed three websites using HTML, CSS, and JavaScript,
-which helped me understand frontend structure, styling, layout design, and user interaction.
-
-</p>
-
+<!-- RESUME -->
+<section class="resume-section" id="resume">
+  <span class="section-label">Background</span>
+  <h2 class="section-title">Resume</h2>
+  <p class="section-intro">4+ years in enterprise backend engineering, now deepening in AI.</p>
+  <div class="resume-grid">
+    <div class="resume-col">
+      <h3>Experience & Education</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2024 — Present</div>
+          <div class="timeline-title">MS in Artificial Intelligence</div>
+          <div class="timeline-org">University at Buffalo (SUNY)</div>
+          <div class="timeline-desc">Machine learning, deep learning, intelligent systems. Bridging software engineering with AI.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2019 — 2024</div>
+          <div class="timeline-title">Java Backend Developer</div>
+          <div class="timeline-org">Tata Consultancy Services · Client: Allianz</div>
+          <div class="timeline-desc">Built enterprise microservices in Java & Spring Boot. Designed and maintained Apache Kafka producers/consumers for the Arcnet real-time messaging system. REST API development, Agile collaboration, production support.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2015 — 2019</div>
+          <div class="timeline-title">B.Tech in Computer Science & Engineering</div>
+          <div class="timeline-org">RGUKT Nuzvid · CGPA: 7.9</div>
+          <div class="timeline-desc">Strong foundations in programming and ML basics. Built three web projects in HTML/CSS/JS.</div>
+        </div>
+      </div>
+    </div>
+    <div class="resume-col">
+      <h3>Technical Skills</h3>
+      <div class="skills-wrap">
+        <div class="skill-row">
+          <div class="skill-row-label"><span>Java & Spring Boot</span><span>Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-label"><span>Apache Kafka</span><span>Proficient</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-label"><span>REST API Design</span><span>Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-label"><span>Python & PySpark</span><span>Intermediate</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-label"><span>Machine Learning</span><span>Intermediate</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-label"><span>SQL & Databases</span><span>Proficient</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+        </div>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">Microservices</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">Jira</span>
+        <span class="skill-tag">AWS Basics</span>
+        <span class="skill-tag">Spark Streaming</span>
+        <span class="skill-tag">HTML/CSS/JS</span>
+        <span class="skill-tag">ServiceNow</span>
+        <span class="skill-tag">Agile/Scrum</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<section>
-
-<h2>Professional Experience</h2>
-
-<h3>Java Backend Developer — Tata Consultancy Services (Client: Allianz)</h3>
-
-<ul>
-
-<li>Developed backend services using Java and Spring Boot</li>
-
-<li>Designed REST APIs for communication between distributed enterprise systems</li>
-
-<li>Worked with Apache Kafka producers and consumers for real-time messaging workflows</li>
-
-<li>Supported microservices-based backend architecture for enterprise applications</li>
-
-<li>Used GitHub for version control and collaborative development</li>
-
-<li>Used Jira for Agile sprint planning and issue tracking</li>
-
-<li>Supported testing activities including debugging, validation, and defect fixing</li>
-
-<li>Resolved production issues and improved application reliability</li>
-
-<li>Collaborated with development and testing teams to deliver stable application features</li>
-
-</ul>
-
+<!-- PORTFOLIO -->
+<section class="portfolio-section" id="portfolio">
+  <span class="section-label">Work & Projects</span>
+  <h2 class="section-title">Portfolio</h2>
+  <p class="section-intro">Industry experience and academic projects — what I've actually built.</p>
+  <div class="portfolio-grid">
+    <div class="project-card">
+      <div class="project-thumb thumb-kafka">
+        <span>⚡</span>
+        <span class="project-thumb-label">Industry</span>
+      </div>
+      <div class="project-body">
+        <div class="project-tech">
+          <span class="tech-badge">Apache Kafka</span>
+          <span class="tech-badge">Java</span>
+          <span class="tech-badge">Spring Boot</span>
+        </div>
+        <h3>Allianz Arcnet — Kafka Messaging System</h3>
+        <p>Real-time event-driven messaging platform enabling distributed microservices communication across Allianz enterprise. Built producers/consumers, debugged messaging workflows, and improved backend reliability at production scale.</p>
+        <span style="font-size:0.82rem; color:var(--muted);">Proprietary — NDA applies</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb thumb-spotify">
+        <span>🎵</span>
+        <span class="project-thumb-label">ML Project</span>
+      </div>
+      <div class="project-body">
+        <div class="project-tech">
+          <span class="tech-badge">PySpark</span>
+          <span class="tech-badge">Logistic Regression</span>
+          <span class="tech-badge">Random Forest</span>
+        </div>
+        <h3>Spotify Song Popularity Prediction</h3>
+        <p>Classification models to predict song popularity (Low/Medium/High) from audio features. Full pipeline: data cleaning, feature engineering, and model comparison using distributed PySpark.</p>
+        <a href="https://github.com/SrilakshmiV23" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb thumb-video">
+        <span>🎓</span>
+        <span class="project-thumb-label">Final Year Project</span>
+      </div>
+      <div class="project-body">
+        <div class="project-tech">
+          <span class="tech-badge">Machine Learning</span>
+          <span class="tech-badge">Feature Extraction</span>
+          <span class="tech-badge">Classification</span>
+        </div>
+        <h3>Teaching Style Classification from Lecture Videos</h3>
+        <p>ML system to classify teaching styles from lecture video footage. Applied preprocessing and feature extraction pipelines, then trained classifiers to distinguish teaching approaches.</p>
+        <a href="https://github.com/SrilakshmiV23" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb thumb-web">
+        <span>🌐</span>
+        <span class="project-thumb-label">Web Dev</span>
+      </div>
+      <div class="project-body">
+        <div class="project-tech">
+          <span class="tech-badge">HTML</span>
+          <span class="tech-badge">CSS</span>
+          <span class="tech-badge">JavaScript</span>
+        </div>
+        <h3>Portfolio & Academic Websites</h3>
+        <p>Built three web projects during undergrad studies covering layout design, styling, and frontend interaction logic — including this portfolio site deployed to GitHub Pages.</p>
+        <a href="https://github.com/SrilakshmiV23" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+    </div>
+    <div class="project-card" style="grid-column: span 2; background: linear-gradient(135deg, #0d1b2a, #1a3040);">
+      <div style="display:flex; align-items:center; gap:32px; padding:32px; flex-wrap:wrap;">
+        <div style="font-size:3.5rem;">🚀</div>
+        <div style="flex:1; min-width:200px;">
+          <div class="project-tech" style="margin-bottom:10px;">
+            <span class="tech-badge">Coming Soon</span>
+            <span class="tech-badge">Java + ML</span>
+          </div>
+          <h3 style="font-family:'Playfair Display',serif; color:white; font-size:1.1rem; margin-bottom:8px;">Backend + AI Integration Project</h3>
+          <p style="color:rgba(255,255,255,0.55); font-size:0.88rem; line-height:1.7; margin-bottom:16px;">Working on a project that integrates a Spring Boot microservice with an ML inference layer — the exact kind of system I want to spend my career building.</p>
+          <a href="https://github.com/SrilakshmiV23" target="_blank" class="project-link">Follow on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<section>
-
-<h2>Industry Project — Allianz Arcnet Kafka Messaging System</h2>
-
-<p>
-
-At Allianz, I worked on the Arcnet Kafka messaging system project which enabled real-time communication
-between distributed enterprise microservices using event-driven architecture.
-
-</p>
-
-<p>
-
-Apache Kafka was used as a messaging platform where producers publish messages and consumers process them asynchronously,
-which improves scalability, reliability, and flexibility across backend services.
-
-</p>
-
-<p>
-
-My work included implementing Kafka producers and consumers, supporting REST API integrations,
-debugging messaging workflows, assisting testing activities, and improving backend system stability.
-This experience strengthened my understanding of distributed backend architecture and production-level enterprise systems.
-
-</p>
-
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <span class="section-label">Let's Connect</span>
+  <h2 class="section-title">Get in Touch</h2>
+  <p class="section-intro">I'm actively looking for backend or AI engineering roles. If you're building something interesting, I'd love to hear about it.</p>
+  <div class="contact-cards">
+    <a href="mailto:svaddi3@buffalo.edu" class="contact-card">
+      <span class="contact-card-icon">✉️</span>
+      <span class="contact-card-label">Email</span>
+      <span class="contact-card-value">svaddi3@buffalo.edu</span>
+    </a>
+    <a href="https://github.com/SrilakshmiV23" target="_blank" class="contact-card">
+      <span class="contact-card-icon">💻</span>
+      <span class="contact-card-label">GitHub</span>
+      <span class="contact-card-value">SrilakshmiV23</span>
+    </a>
+    <a href="https://www.linkedin.com/in/srilakshmi-vaddi" target="_blank" class="contact-card">
+      <span class="contact-card-icon">🔗</span>
+      <span class="contact-card-label">LinkedIn</span>
+      <span class="contact-card-value">Connect with me</span>
+    </a>
+  </div>
+  <a href="mailto:svaddi3@buffalo.edu" class="btn btn-primary">Say Hello →</a>
 </section>
-
-
-<section>
-
-<h2>Academic Projects</h2>
-
-
-<h3>Video Classification Based on Teaching Style — Bachelor’s Final Year Project</h3>
-
-<p>
-
-Developed a Machine Learning-based system to classify teaching styles from lecture videos
-using preprocessing techniques, feature extraction, and classification algorithms.
-
-This project demonstrated how AI techniques can support education analytics and improve learning insights.
-
-</p>
-
-
-
-<h3>Spotify Song Popularity Prediction — PySpark Machine Learning Project</h3>
-
-<p>
-
-Developed classification models using PySpark to predict song popularity categories
-(Low, Medium, High) based on audio features.
-
-Performed dataset cleaning, preprocessing, feature engineering,
-and trained Logistic Regression and Random Forest models for prediction comparison.
-
-</p>
-
-
-
-<h3>College Web Development Projects</h3>
-
-<p>
-
-Developed three academic websites using HTML, CSS, and JavaScript during my undergraduate studies.
-These projects helped me understand webpage structure, styling techniques, and frontend interaction logic.
-
-</p>
-
-</section>
-
-
-<section>
-
-<h2>Technical Skills</h2>
-
-<p><b>Programming Languages:</b> Java, Python, SQL</p>
-
-<p><b>Backend Development:</b> Spring Boot, REST APIs, Microservices Architecture</p>
-
-<p><b>Messaging Systems:</b> Apache Kafka Producers and Consumers</p>
-
-<p><b>Streaming & Data Processing:</b> Spark Streaming, PySpark</p>
-
-<p><b>Web Development:</b> HTML, CSS, JavaScript</p>
-
-<p><b>Tools:</b> GitHub, Jira, ServiceNow</p>
-
-<p><b>Cloud Platforms:</b> AWS Cloud Basics</p>
-
-<p><b>Artificial Intelligence:</b> Machine Learning, Data Cleaning, Feature Engineering, Classification Models</p>
-
-</section>
-
-
-<section>
-
-<h2>Future Interests</h2>
-
-<p>
-
-I am interested in working as a Backend Software Engineer in environments where scalable Java-based microservices,
-distributed messaging systems such as Apache Kafka, and Machine Learning techniques are used together
-to solve real-world enterprise problems.
-
-</p>
-
-<p>
-
-With 4.2 years of experience in Java, Spring Boot, REST APIs, and Kafka messaging systems at Tata Consultancy Services (Client: Allianz),
-and my current Master’s degree in Artificial Intelligence at the University at Buffalo,
-I am actively strengthening my skills in backend system design, event-driven architectures,
-and integration of Machine Learning solutions into production-level applications.
-
-</p>
-
-<p>
-
-I am especially interested in roles involving microservices architecture, backend API development,
-distributed systems, real-time data processing pipelines, and intelligent data-driven platforms.
-My long-term goal is to contribute to building scalable backend systems that combine strong software engineering practices
-with Artificial Intelligence technologies.
-
-</p>
-
-</section>
-
-
-<section>
-
-<h2>Contact</h2>
-
-<p>Email: svaddi3@buffalo.edu</p>
-
-<p>GitHub: https://github.com/SrilakshmiV23</p>
-
-</section>
-
 
 <footer>
-
-<p>© 2026 Sri Lakshmi Vaddi</p>
-
+  <p>© 2026 <span>Sri Lakshmi Vaddi</span> · Designed & deployed on GitHub Pages</p>
 </footer>
-
 
 </body>
 </html>
