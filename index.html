@@ -2,45 +2,74 @@
 <html>
 
 <head>
-
 <title>Sri Lakshmi Vaddi | Resume Portfolio Website</title>
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<style>
 body{
-font-family: Arial, sans-serif;
+font-family:'Nunito', Arial, sans-serif;
 margin:0;
 background:#eef2f7;
 color:#333;
-line-height:1.7;
+line-height:1.8;
+font-size:15px;
 }
 
-/* HEADER */
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+z-index:-1;
+background:
+radial-gradient(ellipse at 10% 20%, rgba(31,60,136,0.07) 0%, transparent 50%),
+radial-gradient(ellipse at 90% 80%, rgba(77,208,225,0.08) 0%, transparent 50%),
+radial-gradient(ellipse at 50% 50%, rgba(44,62,80,0.04) 0%, transparent 60%);
+background-color:#eef2f7;
+}
 
 header{
-background:linear-gradient(to right,#1f3c88,#2c3e50);
+background:linear-gradient(135deg,#1f3c88 0%,#2c3e50 50%,#1a5276 100%);
 color:white;
-padding:50px;
+padding:60px 50px;
 text-align:center;
 }
 
 header h1{
-margin-bottom:10px;
+margin-bottom:12px;
+font-family:'Merriweather', serif;
+font-size:2.6rem;
 }
 
-/* NAVBAR */
+header p{
+font-size:0.95rem;
+color:rgba(255,255,255,0.85);
+max-width:760px;
+margin:0 auto;
+line-height:1.9;
+}
 
 nav{
 background:#1d2b38;
 padding:15px;
 text-align:center;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
 }
 
 nav a{
 color:white;
 text-decoration:none;
 margin:0 15px;
-font-weight:bold;
+font-weight:600;
+font-size:0.88rem;
+letter-spacing:0.5px;
+text-transform:uppercase;
 transition:0.3s;
 }
 
@@ -48,160 +77,163 @@ nav a:hover{
 color:#4dd0e1;
 }
 
-/* SECTIONS */
-
 section{
 background:white;
 width:85%;
 margin:30px auto;
-padding:30px;
-border-radius:12px;
-box-shadow:0 5px 12px rgba(0,0,0,0.08);
+padding:36px;
+border-radius:14px;
+box-shadow:0 4px 20px rgba(31,60,136,0.08), 0 1px 4px rgba(0,0,0,0.04);
 transition:0.3s;
+border-top:3px solid transparent;
 }
 
 section:hover{
-transform:scale(1.01);
+transform:scale(1.005);
+border-top:3px solid #4dd0e1;
+box-shadow:0 8px 30px rgba(31,60,136,0.12);
 }
-
-/* HEADINGS */
 
 h2{
 color:#1f3c88;
-border-bottom:2px solid #e0e0e0;
-padding-bottom:8px;
+border-bottom:2px solid #e8edf5;
+padding-bottom:10px;
+margin-bottom:20px;
+font-family:'Merriweather', serif;
+font-size:1.5rem;
 }
 
 h3{
 color:#2c3e50;
+font-size:1.05rem;
+font-weight:700;
+margin-top:20px;
+margin-bottom:8px;
 }
 
-/* SKILLS */
+p{
+font-size:0.93rem;
+color:#444;
+line-height:1.85;
+margin-bottom:12px;
+}
 
 .skills span{
 display:inline-block;
-background:#1f3c88;
+background:linear-gradient(135deg,#1f3c88,#2c5f8a);
 color:white;
-padding:8px 14px;
+padding:7px 16px;
 border-radius:20px;
-margin:6px;
-font-size:14px;
+margin:5px;
+font-size:0.78rem;
+font-weight:600;
+letter-spacing:0.3px;
 transition:0.3s;
+box-shadow:0 2px 6px rgba(31,60,136,0.2);
 }
 
 .skills span:hover{
-background:#4dd0e1;
+background:linear-gradient(135deg,#4dd0e1,#1abc9c);
+transform:translateY(-2px);
+box-shadow:0 4px 12px rgba(77,208,225,0.35);
 }
 
-/* FOOTER */
+#contact a{
+color:#1f3c88;
+font-weight:600;
+text-decoration:none;
+}
+
+#contact a:hover{
+color:#4dd0e1;
+text-decoration:underline;
+}
 
 footer{
-background:#2c3e50;
-color:white;
+background:linear-gradient(135deg,#1d2b38,#2c3e50);
+color:rgba(255,255,255,0.75);
 text-align:center;
-padding:20px;
+padding:24px;
 margin-top:30px;
+font-size:0.85rem;
 }
 
-/* MOBILE SUPPORT */
+footer span{
+color:#4dd0e1;
+}
 
 @media(max-width:768px){
-
 section{
 width:95%;
+padding:24px;
 }
 
 header{
-padding:35px;
+padding:40px 24px;
 }
 
+header h1{
+font-size:1.9rem;
 }
 
+nav a{
+margin:0 8px;
+font-size:0.75rem;
+}
+}
 </style>
-
 </head>
-
 
 <body>
 
-
 <header>
-
 <h1>Sri Lakshmi Vaddi</h1>
-
 <p>
-
-Java Backend Developer | Spring Boot | REST APIs | Apache Kafka  
-MS Artificial Intelligence Student — University at Buffalo  
-
-Interested in building scalable backend systems integrated with Machine Learning and Cloud technologies
-
+Java Backend Developer with experience building scalable microservices using Spring Boot and Apache Kafka.<br>
+MS Artificial Intelligence Student — University at Buffalo<br><br>
+Interested in developing intelligent backend systems that integrate Artificial Intelligence, Machine Learning, and Natural Language Processing with Java-based microservices using cloud platforms such as AWS and Azure.
 </p>
-
 </header>
 
-
-
 <nav>
-
 <a href="#resume">Resume</a>
 <a href="#portfolio">Portfolio</a>
 <a href="#interests">What I Like to Do</a>
 <a href="#contact">Contact</a>
-
 </nav>
 
-
-
 <section id="resume">
-
 <h2>Resume</h2>
-
 
 <h3>Professional Profile</h3>
 
 <p>
-
 I am a Java Backend Developer with enterprise application development experience at Tata Consultancy Services, where I worked for the Allianz client building scalable backend services using Java and Spring Boot. I designed REST APIs that supported communication between distributed enterprise systems and contributed to microservices-based application workflows.
-
 </p>
 
 <p>
-
 I worked extensively with Apache Kafka messaging systems supporting producers and consumers that enabled asynchronous communication between backend services. My responsibilities included supporting message validation workflows, retry handling mechanisms, debugging messaging pipelines, and resolving production-level issues to improve system reliability.
-
 </p>
 
 <p>
-
-I also collaborated with cloud and DevOps teams supporting application deployment activities in AWS environments and participated in Agile development workflows using GitHub and Jira. Currently, I am pursuing a Master’s degree in Artificial Intelligence at the University at Buffalo to strengthen my ability to build intelligent backend systems that integrate Machine Learning with scalable enterprise architectures.
-
+I also collaborated with cloud and DevOps teams supporting application deployment activities in AWS environments and participated in Agile development workflows using GitHub and Jira. Currently, I am pursuing a Master’s degree in Artificial Intelligence at the University at Buffalo to strengthen my ability to build intelligent backend systems that integrate Machine Learning, NLP, and scalable enterprise architectures.
 </p>
-
-
 
 <h3>Education</h3>
 
 <p>
-
-Master of Science in Artificial Intelligence  
+<strong>Master of Science in Artificial Intelligence</strong><br>
 University at Buffalo (SUNY)
-
 </p>
 
 <p>
-
-Bachelor of Technology in Computer Science and Engineering  
+<strong>Bachelor of Technology in Computer Science and Engineering</strong><br>
 RGUKT Nuzvid
-
 </p>
-
-
 
 <h3>Technical Skills</h3>
 
 <div class="skills">
-
 <span>Java</span>
 <span>Spring Boot</span>
 <span>REST APIs</span>
@@ -214,6 +246,7 @@ RGUKT Nuzvid
 <span>PySpark</span>
 <span>Machine Learning</span>
 <span>Artificial Intelligence</span>
+<span>NLP Interest</span>
 <span>HTML</span>
 <span>CSS</span>
 <span>JavaScript</span>
@@ -224,145 +257,94 @@ RGUKT Nuzvid
 <span>Azure Learning</span>
 <span>Docker Learning</span>
 <span>DevOps Learning</span>
-
 </div>
-
 </section>
 
-
-
 <section id="portfolio">
-
 <h2>Portfolio</h2>
-
-
 
 <h3>Enterprise Project — Allianz Arcnet Kafka Messaging Platform</h3>
 
 <p>
-
 At Allianz, I worked on the Arcnet Kafka messaging platform that supported communication between distributed enterprise backend services using event-driven architecture. Apache Kafka enabled asynchronous message exchange between microservices so that applications could communicate reliably without depending on synchronous service availability.
-
 </p>
 
 <p>
-
 Within this system, Kafka producers were responsible for publishing events generated by backend services, and Kafka consumers processed those events to trigger downstream workflows. This architecture improved scalability, fault tolerance, and system responsiveness across enterprise applications.
-
 </p>
 
 <p>
-
 My responsibilities included supporting Kafka producer and consumer integration, assisting REST API communication between services, validating message processing workflows, supporting retry and error-handling logic, debugging messaging pipelines, and resolving production-level issues to maintain backend system stability.
-
 </p>
-
-
 
 <h3>Machine Learning Project — Video Classification Based on Teaching Style</h3>
 
 <p>
-
-During my undergraduate studies, I developed a machine learning-based video classification system that automatically identified teaching styles from recorded lecture videos. The objective of this project was to analyze instructional patterns and support education analytics by recognizing different teaching approaches.
-
+During my undergraduate studies, I developed a machine learning-based video classification system that automatically identified teaching styles from recorded lecture videos. The objective was to analyze instructional patterns and support education analytics by recognizing different teaching approaches.
 </p>
 
 <p>
-
-The project involved preprocessing lecture video datasets, extracting meaningful visual and temporal features from frames, and applying classification algorithms to categorize teaching styles based on instructor behavior and presentation techniques. This helped me understand how feature extraction and supervised learning models can be applied to real-world multimedia datasets.
-
+The project involved preprocessing lecture video datasets, extracting meaningful visual and temporal features from frames, and applying classification algorithms to categorize teaching styles based on instructor behavior and presentation techniques.
 </p>
 
 <p>
-
 Through this project, I gained experience working with machine learning workflows including dataset preparation, feature engineering, model training, evaluation, and interpretation of classification results.
-
 </p>
-
-
 
 <h3>Distributed Data Project — Spotify Song Popularity Prediction Using PySpark</h3>
 
 <p>
-
 In this project, I built classification models using PySpark to predict song popularity levels such as Low, Medium, and High based on audio feature datasets. I performed dataset cleaning, feature engineering, and trained Logistic Regression and Random Forest classification models to compare prediction performance and select the best-performing approach.
-
 </p>
-
-
 
 <h3>Web Development Projects</h3>
 
 <p>
-
 I developed three academic websites using HTML, CSS, and JavaScript to strengthen my understanding of webpage structure, layout styling techniques, and frontend interaction logic. These projects helped me build the foundation required to create and publish this portfolio website using GitHub Pages.
-
 </p>
-
 </section>
 
-
-
 <section id="interests">
-
 <h2>What I Like to Do</h2>
 
 <p>
-
 I enjoy building backend systems that support scalable enterprise applications and reliable communication between distributed services using Java microservices architecture and Apache Kafka messaging platforms.
-
 </p>
 
 <p>
-
-I am especially interested in Artificial Intelligence and Machine Learning because I want to integrate intelligent prediction models into backend systems that support automation, decision-making, and real-time analytics pipelines.
-
+I am especially interested in applying Artificial Intelligence, Machine Learning, and Natural Language Processing techniques within Java backend systems to build intelligent services that support automation, recommendation systems, text processing, prediction workflows, and real-time decision-making applications.
 </p>
 
 <p>
-
 Currently, I am expanding my knowledge of Docker containerization, DevOps workflows, AWS Cloud services, and Microsoft Azure deployment environments to better understand how production-level backend applications are deployed, monitored, and scaled in modern enterprise environments.
-
 </p>
 
+<p>
+My long-term goal is to work on backend platforms where Java microservices interact with AI and NLP-based models to support intelligent workflows such as text processing, predictive analytics, and conversational system integrations in production cloud environments.
+</p>
 </section>
 
-
-
 <section id="contact">
-
 <h2>Contact</h2>
 
-<p>Email: svaddi3@buffalo.edu</p>
+<p>📧 Email: <a href="mailto:svaddi3@buffalo.edu">svaddi3@buffalo.edu</a></p>
 
-<p>
-
-GitHub:
+<p>💻 GitHub:
 <a href="https://github.com/SrilakshmiV23" target="_blank">
 github.com/SrilakshmiV23
 </a>
-
 </p>
 
-<p>
-
-LinkedIn:
+<p>🔗 LinkedIn:
 <a href="https://www.linkedin.com/in/sri-lakshmi-vaddi-829142359/" target="_blank">
 linkedin.com/in/sri-lakshmi-vaddi
 </a>
-
 </p>
-
 </section>
 
-
-
 <footer>
-
-<p>© Sri Lakshmi Vaddi — Resume Portfolio Website</p>
-
+<p>© <span>Sri Lakshmi Vaddi</span> — Resume Portfolio Website</p>
 </footer>
-
 
 </body>
 </html>
