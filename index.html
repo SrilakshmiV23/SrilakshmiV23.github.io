@@ -4,9 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Lakshmi Vaddi | Java Backend Developer & AI Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=sw--light:#faf7f2;;ap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 :root{
   --navy:#0d1b3e;
@@ -22,7 +28,9 @@
   --card:#fdfcf9;
 }
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   font-family:'DM Sans',sans-serif;
@@ -31,7 +39,6 @@ body{
   line-height:1.75;
 }
 
-/* ── HEADER ── */
 header{
   background:var(--navy);
   position:relative;
@@ -42,21 +49,23 @@ header{
 header::before{
   content:'';
   position:absolute;
-  top:-60px;right:-80px;
-  width:500px;height:500px;
+  top:-60px;
+  right:-80px;
+  width:500px;
+  height:500px;
   border-radius:50%;
   background:radial-gradient(circle,rgba(200,169,110,0.12),transparent 70%);
-  pointer-events:none;
 }
 
 header::after{
   content:'';
   position:absolute;
-  bottom:-100px;left:-60px;
-  width:400px;height:400px;
+  bottom:-100px;
+  left:-60px;
+  width:400px;
+  height:400px;
   border-radius:50%;
   background:radial-gradient(circle,rgba(45,74,122,0.5),transparent 70%);
-  pointer-events:none;
 }
 
 .header-inner{
@@ -75,7 +84,6 @@ header::after{
   border-radius:50%;
   object-fit:cover;
   border:3px solid var(--accent);
-  flex-shrink:0;
   box-shadow:0 0 0 8px rgba(200,169,110,0.15);
 }
 
@@ -85,11 +93,6 @@ header::after{
   color:var(--white);
   line-height:1.1;
   margin-bottom:6px;
-}
-
-.header-text h1 em{
-  font-style:italic;
-  color:var(--accent2);
 }
 
 .title-badge{
@@ -107,13 +110,12 @@ header::after{
 }
 
 .header-text p{
-  color:rgba(255,255,255,0.72);
+  color:rgba(255,255,255,0.75);
   font-size:15px;
   line-height:1.8;
   max-width:540px;
 }
 
-/* ── NAV ── */
 nav{
   background:var(--navy2);
   position:sticky;
@@ -126,7 +128,7 @@ nav{
   max-width:900px;
   margin:0 auto;
   display:flex;
-  gap:0;
+  flex-wrap:wrap;
   padding:0 40px;
 }
 
@@ -137,7 +139,7 @@ nav a{
   font-weight:500;
   letter-spacing:1px;
   text-transform:uppercase;
-  padding:18px 20px;
+  padding:18px 16px;
   display:block;
   border-bottom:2px solid transparent;
   transition:all .25s;
@@ -148,14 +150,12 @@ nav a:hover{
   border-bottom-color:var(--accent);
 }
 
-/* ── LAYOUT ── */
 .content{
   max-width:900px;
   margin:0 auto;
   padding:50px 40px;
 }
 
-/* ── SECTION ── */
 .section{
   background:var(--card);
   border:1px solid var(--border);
@@ -173,10 +173,11 @@ nav a:hover{
 .section::before{
   content:'';
   position:absolute;
-  left:0;top:20px;bottom:20px;
+  left:0;
+  top:20px;
+  bottom:20px;
   width:3px;
   background:linear-gradient(180deg,var(--accent),var(--steel));
-  border-radius:0 2px 2px 0;
 }
 
 .section-header{
@@ -187,14 +188,14 @@ nav a:hover{
 }
 
 .section-icon{
-  width:38px;height:38px;
+  width:38px;
+  height:38px;
   background:linear-gradient(135deg,var(--navy),var(--steel));
   border-radius:10px;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:16px;
-  flex-shrink:0;
 }
 
 h2{
@@ -216,13 +217,15 @@ p{
   margin-bottom:14px;
 }
 
-p:last-child{margin-bottom:0}
-
-/* ── EXPERIENCE ── */
-.job-card{
+.job-card,
+.project-card,
+.contact-card{
   background:white;
   border:1px solid var(--border);
   border-radius:12px;
+}
+
+.job-card{
   padding:28px 30px;
   margin-bottom:20px;
   position:relative;
@@ -232,7 +235,9 @@ p:last-child{margin-bottom:0}
 .job-card::after{
   content:'';
   position:absolute;
-  top:0;left:0;right:0;
+  top:0;
+  left:0;
+  right:0;
   height:3px;
   background:linear-gradient(90deg,var(--accent),var(--steel));
 }
@@ -305,14 +310,14 @@ p:last-child{margin-bottom:0}
 .resp-list li::before{
   content:'';
   position:absolute;
-  left:0;top:9px;
-  width:6px;height:6px;
+  left:0;
+  top:9px;
+  width:6px;
+  height:6px;
   border-radius:50%;
   background:var(--accent);
-  flex-shrink:0;
 }
 
-/* ── KAFKA FLOW ── */
 .kafka-flow{
   background:linear-gradient(135deg,#0d1b3e,#1a2f5e);
   border-radius:12px;
@@ -344,28 +349,20 @@ p:last-child{margin-bottom:0}
   color:white;
   font-size:13px;
   font-weight:500;
-  white-space:nowrap;
 }
 
 .flow-arrow{
   color:var(--accent);
   font-size:18px;
-  font-weight:300;
 }
 
-/* ── PROJECTS ── */
 .project-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:18px;
 }
 
-@media(max-width:640px){.project-grid{grid-template-columns:1fr}}
-
 .project-card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:12px;
   padding:24px;
   position:relative;
   overflow:hidden;
@@ -417,15 +414,6 @@ p:last-child{margin-bottom:0}
   border-radius:20px;
 }
 
-.project-accent{
-  position:absolute;
-  bottom:0;right:0;
-  width:80px;height:80px;
-  border-radius:50%;
-  opacity:0.06;
-}
-
-/* ── SKILLS ── */
 .skills-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
@@ -441,16 +429,13 @@ p:last-child{margin-bottom:0}
   font-weight:500;
   color:var(--navy);
   text-align:center;
-  transition:all .2s;
 }
 
 .skill-item:hover{
   background:var(--navy);
   color:var(--accent2);
-  border-color:var(--navy);
 }
 
-/* ── EDU ── */
 .edu-row{
   display:flex;
   gap:18px;
@@ -458,24 +443,29 @@ p:last-child{margin-bottom:0}
 }
 
 .edu-dot{
-  width:12px;height:12px;
+  width:12px;
+  height:12px;
   border-radius:50%;
   margin-top:6px;
-  flex-shrink:0;
 }
 
-.edu-content .degree{
+.degree{
   font-weight:600;
   font-size:15px;
   color:var(--navy);
 }
 
-.edu-content .school{
+.school{
   font-size:14px;
   color:var(--muted);
 }
 
-/* ── CONTACT ── */
+.edu-date{
+  font-size:13px;
+  color:var(--accent);
+  font-weight:500;
+}
+
 .contact-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
@@ -483,9 +473,6 @@ p:last-child{margin-bottom:0}
 }
 
 .contact-card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:10px;
   padding:18px 20px;
   display:flex;
   align-items:center;
@@ -500,16 +487,23 @@ p:last-child{margin-bottom:0}
   transform:translateY(-2px);
 }
 
-.contact-card:hover .contact-label{color:rgba(255,255,255,0.6)}
-.contact-card:hover .contact-value{color:white}
+.contact-card:hover .contact-label{
+  color:rgba(255,255,255,0.6);
+}
+
+.contact-card:hover .contact-value{
+  color:white;
+}
 
 .contact-icon{
-  width:40px;height:40px;
+  width:40px;
+  height:40px;
   border-radius:50%;
   background:linear-gradient(135deg,var(--navy),var(--steel));
-  display:flex;align-items:center;justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-size:17px;
-  flex-shrink:0;
 }
 
 .contact-label{
@@ -525,10 +519,8 @@ p:last-child{margin-bottom:0}
   font-size:13.5px;
   font-weight:500;
   color:var(--navy);
-  transition:color .2s;
 }
 
-/* ── FOOTER ── */
 footer{
   background:var(--navy);
   color:rgba(255,255,255,0.5);
@@ -537,40 +529,69 @@ footer{
   font-size:13px;
 }
 
-footer span{color:var(--accent2)}
+footer span{
+  color:var(--accent2);
+}
 
-/* ── RESPONSIVE ── */
 @media(max-width:768px){
-  .header-inner{flex-direction:column;text-align:center;gap:24px}
-  .header-text p{max-width:100%}
-  .content{padding:30px 20px}
-  .section{padding:28px 22px}
-  .job-header{flex-direction:column}
-  .nav-inner{padding:0 10px}
-  nav a{padding:15px 10px;font-size:11px}
+  .header-inner{
+    flex-direction:column;
+    text-align:center;
+    gap:24px;
+  }
+
+  .content{
+    padding:30px 20px;
+  }
+
+  .section{
+    padding:28px 22px;
+  }
+
+  .job-header{
+    flex-direction:column;
+  }
+
+  .nav-inner{
+    padding:0 10px;
+    justify-content:center;
+  }
+
+  nav a{
+    padding:13px 9px;
+    font-size:10px;
+  }
+
+  .project-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <img src="profile.jpeg" class="profile-photo" alt="Sri Lakshmi Vaddi">
     <div class="header-text">
       <div class="title-badge">Available for Opportunities</div>
       <h1>Sri Lakshmi Vaddi</h1>
-      <p>Java Backend Developer with enterprise experience building scalable microservices at Tata Consultancy Services. Currently pursuing MS Artificial Intelligence at University at Buffalo — focused on intelligent backend platforms where Java microservices meet ML and NLP.</p>
+      <p>
+        Java Backend Developer with enterprise experience building scalable microservices at Tata Consultancy Services.
+        Currently pursuing MS in Artificial Intelligence at University at Buffalo, focused on intelligent backend
+        platforms where Java microservices meet ML and NLP.
+      </p>
     </div>
   </div>
 </header>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
     <a href="#portfolio">Projects</a>
+    <a href="#passion">What I Like</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
@@ -578,187 +599,200 @@ footer span{color:var(--accent2)}
 
 <div class="content">
 
-  <!-- EXPERIENCE -->
-  <section class="section" id="experience">
-    <div class="section-header">
-      <div class="section-icon">💼</div>
-      <h2>Work Experience</h2>
+<section class="section" id="experience">
+  <div class="section-header">
+    <div class="section-icon">💼</div>
+    <h2>Work Experience</h2>
+  </div>
+
+  <div class="job-card">
+    <div class="job-header">
+      <div>
+        <div class="job-title">Java Developer</div>
+        <div class="job-company">Tata Consultancy Services (TCS)</div>
+      </div>
+      <div class="badge badge-date">Dec 2021 – Feb 2026</div>
     </div>
 
-    <div class="job-card">
-      <div class="job-header">
-        <div>
-          <div class="job-title">Java Developer</div>
-          <div class="job-company">Tata Consultancy Services (TCS)</div>
-        </div>
-        <div style="text-align:right">
-          <div class="badge badge-date"></div>
-        </div>
-      </div>
-      <div class="job-meta">
-        <span class="badge badge-loc">📍 Hyderabad, India</span>
-        <span class="badge badge-type">Full-time · Enterprise</span>
-      </div>
+    <div class="job-meta">
+      <span class="badge badge-loc">📍 Hyderabad, India</span>
+      <span class="badge badge-type">Full-time · Enterprise</span>
+    </div>
 
-      <p style="font-size:14.5px;color:var(--muted);margin-bottom:18px">
-        Worked on backend application development using Java, Spring Boot, REST APIs, and Apache Kafka building reliable backend services, improving service-to-service communication, and supporting real-time data processing in enterprise applications for the Allianz Client.
+    <p>
+      Worked on backend application development using Java, Spring Boot, REST APIs, and Apache Kafka.
+      Built reliable backend services, improved service-to-service communication, and supported real-time
+      data processing in enterprise applications for the Allianz client.
+    </p>
+
+    <h3>Responsibilities</h3>
+    <ul class="resp-list">
+      <li>Built backend services using Java and Spring Boot for enterprise-grade distributed systems</li>
+      <li>Designed and developed RESTful APIs for secure communication between systems</li>
+      <li>Created Kafka producers and consumers to process real-time messages across distributed services</li>
+      <li>Worked on microservice-based architecture to improve scalability and maintainability</li>
+      <li>Improved code quality, performance, and reliability through debugging and optimization</li>
+      <li>Collaborated with QA, DevOps, and business teams to understand requirements and deliver features</li>
+      <li>Supported production issues by analyzing logs, debugging errors, and applying fixes</li>
+      <li>Worked in Agile environments using GitHub for version control and Jira for tracking</li>
+    </ul>
+
+    <div style="margin-top:24px">
+      <h3>Key Project: Arcnet Kafka Messaging Platform</h3>
+      <p>
+        A backend microservices project enabling real-time message processing using Apache Kafka.
+        Different services exchanged data reliably without direct service-to-service dependency.
+        I worked on a Spring Boot microservice that consumed Kafka messages, processed data,
+        and exposed REST APIs for downstream services.
       </p>
 
-      <h3>Responsibilities</h3>
+      <div class="kafka-flow">
+        <div class="kafka-title">Arcnet Message Processing Flow</div>
+        <div class="flow-row">
+          <div class="flow-step">Source App</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">Kafka Producer</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">Kafka Topic</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">Kafka Consumer</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">Spring Boot Service</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">REST API</div>
+        </div>
+      </div>
+
+      <h3>What I Delivered</h3>
       <ul class="resp-list">
-        <li>Built backend services using Java and Spring Boot for enterprise-grade distributed systems</li>
-        <li>Designed and developed RESTful APIs for secure and smooth communication between systems</li>
-        <li>Created Kafka producers and consumers to process real-time messages across distributed services</li>
-        <li>Worked on microservice-based architecture improving scalability and maintainability</li>
-        <li>Improved code quality, performance, and reliability through debugging and optimization</li>
-        <li>Collaborated with QA, DevOps, and business teams to understand requirements and deliver features</li>
-        <li>Supported production issues by analyzing logs, debugging errors, and applying fixes</li>
-        <li>Worked in Agile environments using GitHub for version control and Jira for project tracking</li>
+        <li>Developed a Java Spring Boot microservice for real-time data processing</li>
+        <li>Implemented Kafka consumers to read messages and producers to publish downstream events</li>
+        <li>Designed REST APIs for cross-service communication</li>
+        <li>Added error handling and logging for better observability</li>
+        <li>Supported fault-tolerant message flows with retry logic</li>
+        <li>Worked on scalable backend design for enterprise data movement</li>
       </ul>
 
-      <div style="margin-top:24px">
-        <h3>Key Project: Arcnet Kafka Messaging Platform</h3>
-        <p style="font-size:14.5px;color:var(--muted);margin-bottom:18px">
-          A backend microservices project enabling real-time message processing using Apache Kafka — allowing different services to exchange data quickly and reliably without direct service-to-service coupling. Developed a Spring Boot microservice that consumed Kafka messages, processed data, and exposed REST APIs for downstream services.
-        </p>
-
-        <div class="kafka-flow">
-          <div class="kafka-title">Arcnet Message Processing Flow</div>
-          <div class="flow-row">
-            <div class="flow-step">Source Application</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Kafka Producer</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Kafka Topic</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Kafka Consumer</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Spring Boot Service</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">REST API / Target</div>
-          </div>
-        </div>
-
-        <h3 style="margin-top:18px">What I Delivered</h3>
-        <ul class="resp-list">
-          <li>Developed a Java Spring Boot microservice for real-time data processing</li>
-          <li>Implemented Kafka consumers to read messages and Kafka producers to publish to downstream topics</li>
-          <li>Designed REST APIs for cross-service communication</li>
-          <li>Added error handling and logging for robust message processing observability</li>
-          <li>Supported fault-tolerant message flows with retry logic for improved reliability</li>
-          <li>Engineered scalable backend design handling large volumes of enterprise data</li>
-        </ul>
-
-        <div class="tech-tags" style="margin-top:16px">
-          <span class="tech-tag">Java</span>
-          <span class="tech-tag">Spring Boot</span>
-          <span class="tech-tag">Apache Kafka</span>
-          <span class="tech-tag">REST APIs</span>
-          <span class="tech-tag">Microservices</span>
-          <span class="tech-tag">SQL</span>
-          <span class="tech-tag">Git</span>
-          <span class="tech-tag">Agile</span>
-        </div>
+      <div class="tech-tags">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">Spring Boot</span>
+        <span class="tech-tag">Apache Kafka</span>
+        <span class="tech-tag">REST APIs</span>
+        <span class="tech-tag">Microservices</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Git</span>
+        <span class="tech-tag">Agile</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- EDUCATION -->
-  <section class="section" id="education">
-    <div class="section-header">
-      <div class="section-icon">🎓</div>
-      <h2>Education</h2>
+<section class="section" id="education">
+  <div class="section-header">
+    <div class="section-icon">🎓</div>
+    <h2>Education</h2>
+  </div>
+
+  <div class="edu-row">
+    <div class="edu-dot" style="background:var(--accent)"></div>
+    <div>
+      <div class="degree">Master of Science in Artificial Intelligence</div>
+      <div class="school">University at Buffalo (SUNY)</div>
+      <div class="edu-date">Jan 2026 – Present</div>
+    </div>
+  </div>
+
+  <div class="edu-row">
+    <div class="edu-dot" style="background:var(--steel)"></div>
+    <div>
+      <div class="degree">Bachelor of Technology — Computer Science & Engineering</div>
+      <div class="school">Rajiv Gandhi University of Knowledge Technologies Nuzvid</div>
+      <div class="edu-date">2017 – 2021</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="portfolio">
+  <div class="section-header">
+    <div class="section-icon">🚀</div>
+    <h2>Projects</h2>
+  </div>
+
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div class="project-label">Enterprise</div>
+      <div class="project-title">Allianz Arcnet Kafka Platform</div>
+      <p class="project-desc">
+        Kafka-based event-driven microservices project supporting distributed backend communication,
+        retry handling, REST API integration, and production debugging pipelines at TCS.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">Spring Boot</span>
+        <span class="tech-tag">Kafka</span>
+        <span class="tech-tag">Microservices</span>
+      </div>
     </div>
 
-    <div class="edu-row">
-      <div class="edu-dot" style="background:var(--accent)"></div>
-      <div class="edu-content">
-        <div class="degree">Master of Science in Artificial Intelligence</div>
-        <div class="school">University at Buffalo (SUNY)</div>
+    <div class="project-card">
+      <div class="project-label">Mobile App</div>
+      <div class="project-title">Dish A Day Recipe Application</div>
+      <p class="project-desc">
+        Cross-platform React Native mobile app for recipe discovery with step-by-step instructions,
+        favorites, and Firebase real-time database for dynamic content updates.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">React Native</span>
+        <span class="tech-tag">Firebase</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">Android Studio</span>
       </div>
     </div>
 
-    <div class="edu-row">
-      <div class="edu-dot" style="background:var(--steel)"></div>
-      <div class="edu-content">
-        <div class="degree">Bachelor of Technology — Computer Science & Engineering</div>
-        <div class="school">Rajiv Gandhi University of Knowledge Technologies Nuzvid</div>
+    <div class="project-card">
+      <div class="project-label">Machine Learning</div>
+      <div class="project-title">Teaching Style Video Classification</div>
+      <p class="project-desc">
+        ML classification system analyzing lecture videos to identify teaching styles using visual feature
+        extraction and pattern detection for education analytics.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Machine Learning</span>
+        <span class="tech-tag">Feature Extraction</span>
+        <span class="tech-tag">Classification</span>
       </div>
     </div>
-  </section>
 
-  <!-- PORTFOLIO -->
-  <section class="section" id="portfolio">
-    <div class="section-header">
-      <div class="section-icon">🚀</div>
-      <h2>Projects</h2>
+    <div class="project-card">
+      <div class="project-label">Big Data</div>
+      <div class="project-title">Spotify Song Popularity Prediction</div>
+      <p class="project-desc">
+        PySpark project processing 114,000+ Spotify songs with feature engineering.
+        Random Forest was selected to predict popularity from audio attributes.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">PySpark</span>
+        <span class="tech-tag">Random Forest</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Feature Engineering</span>
+      </div>
     </div>
 
-    <div class="project-grid">
+  </div>
+</section>
 
-      <div class="project-card">
-        <div style="background:var(--navy);position:absolute;bottom:0;right:0;width:90px;height:90px;border-radius:50%;opacity:0.06;transform:translate(20px,20px)"></div>
-        <div class="project-label">Enterprise</div>
-        <div class="project-title">Allianz Arcnet Kafka Platform</div>
-        <p class="project-desc">Kafka-based event-driven microservices supporting distributed backend communication, validation workflows, retry mechanisms, and production debugging pipelines at TCS.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">Java</span>
-          <span class="tech-tag">Spring Boot</span>
-          <span class="tech-tag">Apache Kafka</span>
-          <span class="tech-tag">Microservices</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-label">Mobile App</div>
-        <div class="project-title">Dish A Day Recipe Application</div>
-        <p class="project-desc">Cross-platform React Native mobile app for recipe discovery with step-by-step instructions, favorites, and Firebase real-time database for dynamic content updates.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">React Native</span>
-          <span class="tech-tag">Firebase</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Android Studio</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-label">Machine Learning</div>
-        <div class="project-title">Teaching Style Video Classification</div>
-        <p class="project-desc">ML classification system analyzing lecture videos to identify teaching styles using frame-level visual feature extraction and behavioral pattern detection for education analytics.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Machine Learning</span>
-          <span class="tech-tag">Feature Extraction</span>
-          <span class="tech-tag">Classification</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-label">Big Data</div>
-        <div class="project-title">Spotify Song Popularity Prediction</div>
-        <p class="project-desc">Large-scale PySpark pipeline preprocessing 114,000+ songs with feature engineering. Random Forest model selected for best accuracy predicting popularity from audio attributes.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">PySpark</span>
-          <span class="tech-tag">Random Forest</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Feature Engineering</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  <!-- WHAT I LIKE TO DO -->
 <section class="section" id="passion">
   <div class="section-header">
     <div class="section-icon">💡</div>
     <h2>What I Like to Build</h2>
   </div>
 
-  <p style="font-size:15px;color:var(--muted);margin-bottom:24px">
-    After working for over four years as a Java backend developer, I realized I enjoy building systems 
-    that are not only reliable but also intelligent. That is why I am currently pursuing my MS in 
-    Artificial Intelligence at the University at Buffalo. My goal is to combine strong backend engineering 
-    with Machine Learning so the platforms I build can analyze data, make predictions, and support real 
+  <p>
+    After working for over four years as a Java backend developer, I realized I enjoy building systems
+    that are not only reliable but also intelligent. My goal is to combine backend engineering with
+    Machine Learning so the platforms I build can analyze data, make predictions, and support real
     decisions in production environments.
   </p>
 
@@ -768,9 +802,8 @@ footer span{color:var(--accent2)}
       <div class="project-label">Backend + Machine Learning</div>
       <div class="project-title">Connecting Spring Boot Services with ML Models</div>
       <p class="project-desc">
-        I enjoy designing backend services that do more than store and forward data. 
-        I want to build Spring Boot microservices that call machine learning models, 
-        process predictions in real time, and trigger actions automatically inside enterprise systems.
+        I want to build Spring Boot microservices that call machine learning models, process predictions
+        in real time, and trigger actions automatically inside enterprise systems.
       </p>
       <div class="tech-tags">
         <span class="tech-tag">Java</span>
@@ -780,46 +813,40 @@ footer span{color:var(--accent2)}
       </div>
     </div>
 
-
     <div class="project-card">
       <div class="project-label">Streaming Intelligence</div>
       <div class="project-title">Making Kafka Pipelines Smarter</div>
       <p class="project-desc">
-        At TCS I worked with Kafka for real-time message processing between distributed services. 
-        Now I am interested in adding intelligence into streaming pipelines — detecting anomalies, 
-        predicting outcomes, and triggering automated workflows directly from event streams.
+        Since I worked with Kafka, I am interested in adding intelligence into streaming pipelines:
+        detecting anomalies, predicting outcomes, and triggering automated workflows from event streams.
       </p>
       <div class="tech-tags">
         <span class="tech-tag">Apache Kafka</span>
         <span class="tech-tag">Microservices</span>
-        <span class="tech-tag">Real-time Processing</span>
+        <span class="tech-tag">Real-time Data</span>
       </div>
     </div>
-
 
     <div class="project-card">
       <div class="project-label">Cloud Deployment</div>
       <div class="project-title">Building Production AI Systems on AWS</div>
       <p class="project-desc">
-        I am currently learning how production backend and AI systems run in cloud environments. 
-        My focus is understanding how services like S3, Lambda, ECS, and SageMaker work together 
-        to deploy scalable intelligent applications.
+        I want to learn how backend services, storage, containers, serverless functions,
+        and ML models work together in cloud environments.
       </p>
       <div class="tech-tags">
         <span class="tech-tag">AWS</span>
-        <span class="tech-tag">Cloud Architecture</span>
-        <span class="tech-tag">Model Deployment</span>
+        <span class="tech-tag">Cloud</span>
+        <span class="tech-tag">Deployment</span>
       </div>
     </div>
-
 
     <div class="project-card">
       <div class="project-label">Natural Language Processing</div>
       <div class="project-title">Understanding Documents Automatically</div>
       <p class="project-desc">
-        I am especially interested in NLP systems that extract meaning from documents such as 
-        insurance records, support tickets, and business emails. I want to build backend services 
-        that classify text, summarize information, and route requests automatically.
+        I am interested in NLP systems that classify, summarize, and route information from
+        documents, tickets, emails, and business messages.
       </p>
       <div class="tech-tags">
         <span class="tech-tag">NLP</span>
@@ -828,14 +855,12 @@ footer span{color:var(--accent2)}
       </div>
     </div>
 
-
     <div class="project-card">
       <div class="project-label">Enterprise Systems</div>
       <div class="project-title">Reliable Backend Platforms at Scale</div>
       <p class="project-desc">
-        I enjoy solving real production problems such as improving service communication, 
-        debugging distributed failures, and designing scalable APIs. My experience at TCS 
-        helped me understand how large enterprise systems behave in real environments.
+        I enjoy solving real production problems such as improving service communication,
+        debugging distributed failures, and designing scalable APIs.
       </p>
       <div class="tech-tags">
         <span class="tech-tag">Distributed Systems</span>
@@ -844,81 +869,81 @@ footer span{color:var(--accent2)}
       </div>
     </div>
 
-
     <div class="project-card">
       <div class="project-label">Future Goal</div>
       <div class="project-title">Building Intelligent Event-Driven Platforms</div>
       <p class="project-desc">
-        My long-term goal is to work on platforms where streaming data, backend services, 
-        and machine learning models work together in real time to support decision-making 
-        systems across industries like finance, insurance, and healthcare.
+        My long-term goal is to work on systems where streaming data, backend services,
+        and ML models work together in real time for industries like finance, insurance, and healthcare.
       </p>
       <div class="tech-tags">
         <span class="tech-tag">AI Systems</span>
         <span class="tech-tag">Streaming Data</span>
-        <span class="tech-tag">Enterprise Applications</span>
+        <span class="tech-tag">Enterprise Apps</span>
       </div>
     </div>
 
   </div>
 </section>
 
-  <!-- SKILLS -->
-  <section class="section" id="skills">
-    <div class="section-header">
-      <div class="section-icon">⚡</div>
-      <h2>Technical Skills</h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-item">Java</div>
-      <div class="skill-item">Spring Boot</div>
-      <div class="skill-item">REST APIs</div>
-      <div class="skill-item">Microservices</div>
-      <div class="skill-item">Apache Kafka</div>
-      <div class="skill-item">Python</div>
-      <div class="skill-item">SQL</div>
-      <div class="skill-item">Machine Learning</div>
-      <div class="skill-item">Artificial Intelligence</div>
-      <div class="skill-item">NLP</div>
-      <div class="skill-item">React Native</div>
-      <div class="skill-item">PySpark</div>
-      <div class="skill-item">AWS Cloud</div>
-      <div class="skill-item">GitHub</div>
-      <div class="skill-item">Jira</div>
-      <div class="skill-item">Agile</div>
-    </div>
-  </section>
+<section class="section" id="skills">
+  <div class="section-header">
+    <div class="section-icon">⚡</div>
+    <h2>Technical Skills</h2>
+  </div>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="section-header">
-      <div class="section-icon">✉️</div>
-      <h2>Contact</h2>
-    </div>
-    <div class="contact-grid">
-      <a href="mailto:svaddi3@buffalo.edu" class="contact-card">
-        <div class="contact-icon">📧</div>
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">svaddi3@buffalo.edu</div>
-        </div>
-      </a>
-      <a href="https://github.com/SrilakshmiV23" target="_blank" class="contact-card">
-        <div class="contact-icon">💻</div>
-        <div>
-          <div class="contact-label">GitHub</div>
-          <div class="contact-value">SrilakshmiV23</div>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/in/sri-lakshmi-vaddi-829142359/" target="_blank" class="contact-card">
-        <div class="contact-icon">🔗</div>
-        <div>
-          <div class="contact-label">LinkedIn</div>
-          <div class="contact-value">sri-lakshmi-vaddi</div>
-        </div>
-      </a>
-    </div>
-  </section>
+  <div class="skills-grid">
+    <div class="skill-item">Java</div>
+    <div class="skill-item">Spring Boot</div>
+    <div class="skill-item">REST APIs</div>
+    <div class="skill-item">Microservices</div>
+    <div class="skill-item">Apache Kafka</div>
+    <div class="skill-item">Python</div>
+    <div class="skill-item">SQL</div>
+    <div class="skill-item">Machine Learning</div>
+    <div class="skill-item">Artificial Intelligence</div>
+    <div class="skill-item">NLP</div>
+    <div class="skill-item">React Native</div>
+    <div class="skill-item">PySpark</div>
+    <div class="skill-item">AWS Cloud</div>
+    <div class="skill-item">GitHub</div>
+    <div class="skill-item">Jira</div>
+    <div class="skill-item">Agile</div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-header">
+    <div class="section-icon">✉️</div>
+    <h2>Contact</h2>
+  </div>
+
+  <div class="contact-grid">
+    <a href="mailto:svaddi3@buffalo.edu" class="contact-card">
+      <div class="contact-icon">📧</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">svaddi3@buffalo.edu</div>
+      </div>
+    </a>
+
+    <a href="https://github.com/SrilakshmiV23" target="_blank" class="contact-card">
+      <div class="contact-icon">💻</div>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">SrilakshmiV23</div>
+      </div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/sri-lakshmi-vaddi-829142359/" target="_blank" class="contact-card">
+      <div class="contact-icon">🔗</div>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">sri-lakshmi-vaddi</div>
+      </div>
+    </a>
+  </div>
+</section>
 
 </div>
 
@@ -927,6 +952,9 @@ footer span{color:var(--accent2)}
   <p style="margin-top:6px;font-size:12px">Updated <span id="year"></span> · University at Buffalo</p>
 </footer>
 
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
