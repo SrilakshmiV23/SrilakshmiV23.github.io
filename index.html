@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sri Lakshmi Vaddi | Software & Machine Learning Engineer</title>
 <meta name="description" content="Sri Lakshmi Vaddi: software engineer with 4+ years building Kafka microservices at TCS for Allianz, now completing an M.S. in Artificial Intelligence at the University at Buffalo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sri Lakshmi Vaddi | Software & Machine Learning Engineer">
+<meta property="og:description" content="4+ years building Java and Kafka microservices for Allianz at TCS. M.S. in Artificial Intelligence, University at Buffalo (May 2027).">
+<meta property="og:url" content="https://srilakshmiv23.github.io/">
+<meta property="og:image" content="https://srilakshmiv23.github.io/profile.jpeg">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#12201A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23E0A526'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='28' text-anchor='middle' fill='%2312201A'%3ESV%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -104,7 +112,7 @@
   }
 
   /* timeline */
-  .timeline { list-style: none; margin: 56px 0 0; padding: 0 0 64px; display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+  .timeline { list-style: none; margin: 56px 0 0; padding: 0 0 64px; display: grid; grid-template-columns: repeat(6, 1fr); position: relative; }
   .timeline::before { content: ""; position: absolute; left: 0; right: 0; top: 10px; height: 2px; background: var(--forest-3); }
   .timeline li { position: relative; padding: 34px 18px 0 0; }
   .timeline li::before { content: ""; position: absolute; top: 2px; left: 0; width: 18px; height: 18px; border-radius: 50%; background: var(--forest); border: 2px solid var(--on-dark-soft); }
@@ -126,6 +134,14 @@
   .job-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
   .job-title h3 { font-size: 30px; }
   .job-sub { margin: 6px 0 26px; color: var(--ink-soft); }
+  .job-overview { font-size: 18px; margin: 0 0 8px; max-width: 62ch; }
+  .job-h { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 30px 0 12px; }
+  .job ul.points b { font-weight: 600; }
+  .lifecycle { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; counter-reset: lc; }
+  .lifecycle li { background: var(--paper-deep); border-radius: 14px; padding: 14px; position: relative; }
+  .lifecycle li::before { counter-increment: lc; content: counter(lc); display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--ink); color: var(--paper); font-weight: 700; font-size: 13px; margin-bottom: 8px; }
+  .lifecycle b { display: block; font-family: var(--display); font-size: 17px; }
+  .lifecycle span { display: block; font-size: 14px; color: var(--ink-soft); line-height: 1.45; margin-top: 4px; }
   .job ul.points { margin: 0; padding-left: 20px; }
   .job ul.points li { margin-bottom: 11px; }
   .job ul.points li::marker { color: var(--amber-deep); }
@@ -160,6 +176,11 @@
   .feature .chips li { background: var(--forest-2); color: var(--on-dark); border: 1px solid var(--forest-3); }
   .feature .repo { display: inline-block; margin-top: 22px; font-weight: 600; color: var(--amber); }
   .feature-art { background: var(--forest-2); padding: 34px; display: flex; flex-direction: column; justify-content: center; gap: 22px; border-left: 1px solid var(--forest-3); }
+  .pipeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: step; }
+  .pipeline li { position: relative; padding: 10px 14px 10px 46px; border-radius: 12px; background: var(--forest); border: 1px solid var(--forest-3); }
+  .pipeline li::before { counter-increment: step; content: counter(step); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%; background: var(--amber); color: var(--forest); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+  .pipeline b { display: block; color: var(--paper); font-family: var(--display); font-size: 16px; }
+  .pipeline span { color: var(--on-dark-soft); font-size: 13.5px; }
   .mosaic-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .mosaic { margin: 0; }
   .mosaic canvas { width: 100%; aspect-ratio: 3 / 4; display: block; border-radius: 8px; image-rendering: pixelated; background: #000; }
@@ -178,8 +199,33 @@
   .card .chips { margin-top: auto; padding-top: 8px; }
   .card svg { width: 100%; height: auto; display: block; }
   .card.rl { background: var(--ink); color: var(--paper); border: 0; }
+  .card.full { grid-column: span 6; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; padding: 40px; }
+  .card.full h3 { font-size: clamp(26px, 2.8vw, 34px); margin-bottom: 12px; }
+  .card.full .tag { margin-bottom: 14px; }
+  .rl-points { margin: 14px 0 0; padding-left: 20px; color: var(--on-dark); }
+  .rl-points li { margin-bottom: 8px; }
+  .rl-points li::marker { color: var(--amber); }
+  .card.full .chips { margin-top: 18px; }
   .card.rl p { color: var(--on-dark); }
   .card.rl .chips li { background: var(--forest-2); color: var(--on-dark); border: 1px solid var(--forest-3); }
+
+  /* case-study details */
+  details.case { margin-top: 6px; border-top: 1px solid var(--line); padding-top: 12px; }
+  details.case summary { cursor: pointer; font-weight: 600; color: var(--amber-deep); list-style: none; display: inline-flex; align-items: center; gap: 8px; }
+  details.case summary::-webkit-details-marker { display: none; }
+  details.case summary::before { content: "+"; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid currentColor; font-size: 15px; line-height: 1; }
+  details.case[open] summary::before { content: "\2212"; }
+  details.case[open] summary { margin-bottom: 10px; }
+  .case dl { margin: 0; display: grid; grid-template-columns: 110px 1fr; gap: 10px 18px; }
+  .case dt { font-weight: 600; }
+  .case dd { margin: 0; color: var(--ink-soft); }
+  .case ul { margin: 0; padding-left: 18px; }
+  .case li { margin-bottom: 4px; }
+  .feature details.case, .card.rl details.case { border-top-color: var(--forest-3); }
+  .feature details.case summary, .card.rl details.case summary { color: var(--amber); }
+  .feature .case dt, .card.rl .case dt { color: var(--paper); }
+  .feature .case dd, .card.rl .case dd { color: var(--on-dark); }
+  @media (max-width: 720px) { .case dl { grid-template-columns: 1fr; gap: 2px; } .case dd { margin-bottom: 10px; } }
 
   /* skills */
   .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -212,17 +258,79 @@
 
   footer { background: var(--forest); color: var(--on-dark-soft); padding: 26px 0; font-size: 14px; }
 
+  /* scroll progress */
+  .progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--amber); z-index: 50; }
+
+  /* quick jump button */
+  .kbd-btn {
+    font: inherit; font-weight: 500; color: var(--on-dark-soft); background: transparent; cursor: pointer;
+    border: 1px solid var(--forest-3); border-radius: 999px; padding: 6px 12px; display: inline-flex; gap: 8px; align-items: center;
+  }
+  .kbd-btn:hover { color: var(--paper); border-color: var(--on-dark-soft); }
+  .kbd-btn kbd { font-family: var(--mono); font-size: 12px; background: var(--forest-2); border-radius: 5px; padding: 1px 6px; color: var(--paper); }
+
+  /* headline numbers */
+  .stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--forest-3); border-bottom: 1px solid var(--forest-3); }
+  .stats-strip div { padding: 26px 22px 24px 0; }
+  .stats-strip div + div { padding-left: 22px; border-left: 1px solid var(--forest-3); }
+  .stats-strip b { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(34px, 4vw, 52px); line-height: 1; letter-spacing: -0.03em; color: var(--paper); }
+  .stats-strip b em { font-style: normal; color: var(--amber); }
+  .stats-strip span { display: block; margin-top: 8px; color: var(--on-dark-soft); font-size: 15px; line-height: 1.4; }
+
+  /* project filters */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: -16px 0 28px; }
+  .filters button {
+    font: inherit; font-weight: 600; font-size: 15px; cursor: pointer; padding: 9px 18px; border-radius: 999px;
+    border: 1.5px solid var(--ink); background: transparent; color: var(--ink);
+  }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  .is-hidden { display: none !important; }
+
+  /* RL demo */
+  .demo { background: var(--forest-2); border: 1px solid var(--forest-3); border-radius: 16px; padding: 18px 18px 14px; }
+  .demo-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 20px; margin-bottom: 10px; }
+  .demo-head strong { font-family: var(--display); font-size: 17px; color: var(--paper); }
+  .demo-save { font-family: var(--display); font-weight: 800; font-size: 26px; color: var(--amber); letter-spacing: -0.02em; }
+  .demo-save small { font-family: var(--body); font-weight: 500; font-size: 13px; color: var(--on-dark-soft); margin-left: 6px; }
+  .demo svg { width: 100%; height: auto; display: block; }
+  .demo label { display: block; font-size: 14px; color: var(--on-dark); margin-top: 10px; }
+  .demo input[type=range] { width: 100%; accent-color: var(--amber); margin-top: 6px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--on-dark-soft); margin-top: 8px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+
+  /* copy email */
+  .copy-btn { font: inherit; font-weight: 600; cursor: pointer; margin-top: 22px; padding: 12px 20px; border-radius: 999px; border: 2px solid var(--forest); background: transparent; color: var(--forest); }
+  .copy-btn:hover { background: var(--forest); color: var(--paper); }
+
+  /* quick jump palette */
+  dialog.palette { border: 0; padding: 0; border-radius: 18px; width: min(560px, 92vw); background: var(--paper); color: var(--ink); box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+  dialog.palette::backdrop { background: rgba(18,32,26,.6); backdrop-filter: blur(3px); }
+  .palette input { width: 100%; border: 0; border-bottom: 1px solid var(--line); padding: 18px 20px; font: inherit; font-size: 18px; background: transparent; color: var(--ink); outline: none; }
+  .palette ul { list-style: none; margin: 0; padding: 8px; max-height: 50vh; overflow: auto; }
+  .palette li button { width: 100%; text-align: left; font: inherit; border: 0; background: transparent; padding: 12px 14px; border-radius: 10px; cursor: pointer; color: var(--ink); display: flex; justify-content: space-between; }
+  .palette li button span { color: var(--ink-soft); font-size: 14px; }
+  .palette li button:hover, .palette li button.active { background: var(--paper-deep); }
+  .palette .empty { padding: 14px; color: var(--ink-soft); }
+
   /* responsive */
   @media (max-width: 980px) {
     .hero, .job, .feature, .contact .wrap { grid-template-columns: 1fr; }
+    .lifecycle { grid-template-columns: 1fr 1fr; }
     .arch { position: static; }
     .feature-art { border-left: 0; border-top: 1px solid var(--forest-3); }
     .card.wide, .card.half { grid-column: span 6; }
+    .card.full { grid-template-columns: 1fr; padding: 28px; }
     .card.narrow { grid-column: span 3; }
     .skills { grid-template-columns: 1fr 1fr; }
+    .stats-strip { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 720px) {
-    .site-nav a:not(.resume-link) { display: none; }
+    .site-nav a:not(.resume-link), .kbd-btn { display: none; }
+    .stats-strip { grid-template-columns: 1fr 1fr; }
+    .stats-strip div { padding: 20px 14px 18px 0; }
+    .stats-strip div + div { padding-left: 14px; }
+    .stats-strip div:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid var(--forest-3); }
+    .stats-strip div:nth-child(4) { border-top: 1px solid var(--forest-3); }
     .hero { padding-top: 28px; }
     .timeline { grid-template-columns: 1fr; padding-left: 2px; }
     .timeline::before { top: 0; bottom: 64px; left: 9px; right: auto; width: 2px; height: auto; }
@@ -239,6 +347,7 @@
 </style>
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
 <a class="skip" href="#main">Skip to content</a>
 
 <div class="top">
@@ -250,6 +359,7 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+        <button class="kbd-btn" type="button" data-open-palette aria-label="Open quick jump menu">Jump to <kbd>⌘K</kbd></button>
         <a class="resume-link" href="Sri_Lakshmi_Vaddi_Resume.pdf">Resume</a>
       </nav>
     </div>
@@ -267,11 +377,11 @@
         </div>
       </div>
 
-      <svg class="stream-art" viewBox="0 0 520 360" role="img" aria-label="Illustration: events flowing along three streams into Sri's photo">
+      <svg class="stream-art" viewBox="0 0 520 360" role="img" aria-label="Illustration: three skill streams, Java and Kafka, Python and ML, PySpark and data, flowing into Sri's photo">
         <defs><clipPath id="face"><circle cx="400" cy="170" r="104"/></clipPath></defs>
-        <text class="lane-label" x="10" y="72">orders</text>
-        <text class="lane-label" x="10" y="162">payments</text>
-        <text class="lane-label" x="10" y="252">claims</text>
+        <text class="lane-label" x="10" y="72">Java + Kafka</text>
+        <text class="lane-label" x="10" y="162">Python + ML</text>
+        <text class="lane-label" x="10" y="252">PySpark + data</text>
         <line class="lane" x1="10" y1="90" x2="250" y2="90"/>
         <line class="lane" x1="10" y1="180" x2="290" y2="180"/>
         <line class="lane" x1="10" y1="270" x2="250" y2="270"/>
@@ -296,12 +406,20 @@
       </svg>
     </div>
 
+    <div class="stats-strip">
+      <div><b>4+ yrs</b><span>production Java at Tata Consultancy Services</span></div>
+      <div><b>Allianz</b><span>enterprise client, Kafka microservices platform</span></div>
+      <div><b>M.S. AI</b><span>University at Buffalo, graduating May 2027</span></div>
+      <div><b>6</b><span>projects across ML, data and mobile</span></div>
+    </div>
+
     <ol class="timeline" aria-label="Career timeline, oldest first">
-      <li><span class="offset">offset 0</span><time>2017</time><p>Starts B.Tech in Computer Science and Engineering at RGUKT Nuzvid</p></li>
-      <li><span class="offset">offset 1</span><time>Dec 2021</time><p>Joins Tata Consultancy Services as a Java Developer</p></li>
-      <li><span class="offset">offset 2</span><time>2022–2026</time><p>Builds Kafka microservices for the Allianz Arcnet platform</p></li>
-      <li><span class="offset">offset 3</span><time>Jan 2026</time><p>Starts M.S. in Artificial Intelligence at the University at Buffalo</p></li>
-      <li class="now"><span class="offset">latest</span><time>May 2027</time><p>Graduates, ready for full-time roles</p></li>
+      <li><time>2017</time><p>Starts B.Tech in Computer Science and Engineering at RGUKT Nuzvid</p></li>
+      <li><time>Dec 2021</time><p>Joins Tata Consultancy Services as a Java Developer</p></li>
+      <li><time>2022–2026</time><p>Builds Kafka microservices for the Allianz Arcnet platform</p></li>
+      <li><time>Jan 2026</time><p>Starts M.S. in Artificial Intelligence at the University at Buffalo</p></li>
+      <li><time>Fall 2026</time><p>Builds RL agents for smart-home battery energy management</p></li>
+      <li class="now"><time>May 2027</time><p>Graduates, ready for full-time roles</p></li>
     </ol>
   </div>
 </div>
@@ -316,19 +434,34 @@
       <article class="job">
         <div>
           <div class="job-title"><h3>Java Developer</h3></div>
-          <p class="job-sub">Tata Consultancy Services, Hyderabad · Dec 2021 – Feb 2026<br>Client: Allianz, Arcnet Kafka Platform</p>
+          <p class="job-sub">Tata Consultancy Services, Hyderabad, India · Dec 2021 – Feb 2026 (4 years 3 months)<br>Client: Allianz · Project: Arcnet Kafka Platform · Full-time, enterprise</p>
+          <p class="job-overview">I worked on Allianz's Arcnet platform, an event-driven system where Java microservices exchange business events through Apache Kafka. My role covered the full life of a feature: writing the code, testing it, deploying it, and fixing issues once it was live.</p>
+
+          <h4 class="job-h">What I built</h4>
           <ul class="points">
-            <li>Developed Java and Spring Boot microservices for Allianz's Arcnet platform, an event-driven system built on Apache Kafka.</li>
-            <li>Built Kafka producers and consumers to stream business events reliably between services.</li>
-            <li>Designed retry handling that reprocessed failed events instead of losing them, making the platform resilient to downstream outages.</li>
-            <li>Integrated microservices with internal and external systems through REST APIs.</li>
-            <li>Owned features end to end, from development and unit testing to production deployment, in an Agile team using Jira and GitHub.</li>
-            <li>Diagnosed and resolved defects and production issues through root-cause analysis.</li>
+            <li><b>Event-driven microservices:</b> developed Java and Spring Boot services that publish and consume business events on Kafka topics, so services stay decoupled and can scale on their own.</li>
+            <li><b>Kafka producers and consumers:</b> built the components that send events to Kafka and process them reliably on the receiving side.</li>
+            <li><b>Retry handling:</b> designed retry logic so a failed event is processed again instead of being lost, keeping the platform resilient when a downstream system is slow or unavailable.</li>
+            <li><b>REST API integration:</b> connected the microservices with internal and external systems through REST APIs.</li>
+          </ul>
+
+          <h4 class="job-h">How I worked, from code to production</h4>
+          <ol class="lifecycle">
+            <li><b>Develop</b><span>Wrote Java and Spring Boot code for new features, services and Kafka event handlers.</span></li>
+            <li><b>Test</b><span>Unit-tested my code and checked it before each release.</span></li>
+            <li><b>Deploy</b><span>Took features through release into production.</span></li>
+            <li><b>Support</b><span>Investigated defects and production issues, found the root cause and shipped fixes.</span></li>
+          </ol>
+
+          <h4 class="job-h">Team and tools</h4>
+          <ul class="points">
+            <li>Worked in an Agile team, planning and tracking work in Jira and managing code and reviews in GitHub.</li>
+            <li>Collaborated with an enterprise client, Allianz, one of the world's largest insurers, over more than four years.</li>
           </ul>
         </div>
         <aside class="arch" aria-label="How the Arcnet services fit together">
-          <h4>How the platform worked</h4>
-          <p>Services publish events to Kafka; consumers process them, and failures loop back for retry.</p>
+          <h4>How the services fit together</h4>
+          <p>A simplified view of the event flow I worked on: services publish events to Kafka, consumers process them, and failed events are retried.</p>
           <svg viewBox="0 0 440 300" role="img" aria-label="Diagram: producer services send events to Kafka topics, consumer services read them and call REST APIs, failed events go to a retry path back into Kafka">
             <defs>
               <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9DB0A5"/></marker>
@@ -366,48 +499,87 @@
         <h2>Projects</h2>
         <p>Machine learning, data and app work from my master's and beyond.</p>
       </div>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="ml" aria-pressed="false">Machine learning</button>
+        <button type="button" data-filter="data" aria-pressed="false">Data</button>
+        <button type="button" data-filter="apps" aria-pressed="false">Apps</button>
+      </div>
 
-      <article class="feature">
+      <article class="feature" data-cat="ml">
         <div class="feature-text">
-          <span class="tag">Individual project</span>
-          <h3>PDF Provenance Detector</h3>
+          <span class="tag">Individual project, Spring 2026</span>
+          <h3>ForensicsDetective: PDF Provenance Detector</h3>
           <p>A cybersecurity forensics tool that tells whether a PDF was created in Microsoft Word, Google Docs or Python/ReportLab. It supports document authentication and spotting insider threats, such as company files exported from unapproved tools.</p>
           <p>Each PDF's raw bytes become a grayscale image, and SVM and SGD classifiers learn the fingerprint each tool leaves behind.</p>
           <ul class="chips" aria-label="Technologies"><li>Python</li><li>scikit-learn</li><li>SVM</li><li>SGD</li><li>ReportLab</li></ul>
+          <details class="case">
+            <summary>Full case study</summary>
+            <dl>
+              <dt>Problem</dt><dd>Knowing which tool produced a document helps with attribution, authenticity checks and insider-threat investigations, for example spotting company files exported from an unapproved platform.</dd>
+              <dt>Data</dt><dd><ul><li>About 398 PDFs exported from Microsoft Word, built from Wikipedia articles.</li><li>Google Docs PDFs with the same content, generated through the Google Drive API.</li><li>PDFs generated in Python with ReportLab.</li><li>A <code>convert.py</code> script batch-converts the documents.</li></ul></dd>
+              <dt>Approach</dt><dd>Read each PDF's raw bytes and map every byte value (0 to 255) to a pixel, turning the file into a grayscale image. Train SVM and SGD classifiers on those images.</dd>
+              <dt>Results</dt><dd><ul><li>Word vs. Google Docs: 97.5% accuracy for both SVM and SGD, with 1 error in 40 test samples and 100% precision on Google Docs.</li><li>Word vs. Google Docs vs. Python: 98.3% (SVM) and 100% (SGD), with training under one second.</li><li>Python-generated PDFs are visibly darker: mean pixel intensity of 73.17, against about 121 for Word and Google Docs.</li></ul></dd>
+              <dt>Next</dt><dd>Validate at full scale and on real forensic samples, add LibreOffice PDFs and stripped metadata, and try CNN models.</dd>
+            </dl>
+          </details>
           <a class="repo" href="https://github.com/SrilakshmiV23/ForensicsDetective">View the code on GitHub</a>
         </div>
         <div class="feature-art">
-          <div class="mosaic-row" aria-hidden="true">
-            <figure class="mosaic"><canvas width="24" height="32" data-seed="7" data-tone="word"></canvas><figcaption>Word</figcaption></figure>
-            <figure class="mosaic"><canvas width="24" height="32" data-seed="19" data-tone="gdocs"></canvas><figcaption>Google Docs</figcaption></figure>
-            <figure class="mosaic"><canvas width="24" height="32" data-seed="41" data-tone="python"></canvas><figcaption>Python</figcaption></figure>
-          </div>
+          <ol class="pipeline" aria-label="How the detector works">
+            <li><b>PDF file</b><span>Word, Google Docs or Python/ReportLab</span></li>
+            <li><b>Raw bytes</b><span>read byte by byte, values 0 to 255</span></li>
+            <li><b>Grayscale image</b><span>each byte becomes one pixel</span></li>
+            <li><b>SVM and SGD</b><span>classifiers trained on the images</span></li>
+            <li><b>Prediction</b><span>which tool created the PDF</span></li>
+          </ol>
           <div class="stats">
             <div class="stat"><b>100%</b><span>SGD accuracy, 3 classes</span></div>
             <div class="stat"><b>98.3%</b><span>SVM accuracy, 3 classes</span></div>
             <div class="stat"><b>&lt;1 s</b><span>training time</span></div>
           </div>
-          <p class="note">Illustrative byte images. Results are preliminary, from a controlled test set.</p>
+          <p class="note">Preliminary results from a controlled test set. Full-scale validation is in progress.</p>
         </div>
       </article>
 
       <div class="grid">
-        <article class="card rl wide">
-          <svg viewBox="0 0 560 150" role="img" aria-label="Illustration: battery charge level rising when prices are low and falling when prices are high">
-            <path d="M0 110 C 60 110, 80 40, 140 40 S 220 120, 280 120 S 360 30, 420 30 S 500 100, 560 100" fill="none" stroke="#2A4034" stroke-width="3"/>
-            <path d="M0 120 L 70 120 L 70 60 L 210 60 L 210 125 L 330 125 L 330 50 L 470 50 L 470 115 L 560 115" fill="none" stroke="#E0A526" stroke-width="3"/>
-            <text x="8" y="22" fill="#9DB0A5" font-family="IBM Plex Sans, sans-serif" font-size="12">price</text>
-            <rect x="48" y="12" width="14" height="3" fill="#2A4034"/>
-            <text x="76" y="22" fill="#9DB0A5" font-family="IBM Plex Sans, sans-serif" font-size="12">battery action</text>
-            <rect x="166" y="12" width="14" height="3" fill="#E0A526"/>
-          </svg>
-          <h3>Reinforcement learning for smart-home battery management</h3>
-          <p>Tabular RL and Deep Q-Network agents that decide when a home battery should charge or discharge, trained on real NYISO electricity prices and NREL demand and solar data. Benchmarked against a price-threshold rule and a perfect-information optimum, with a study of how peak-usage penalties change cost.</p>
-          <ul class="chips" aria-label="Technologies"><li>Python</li><li>Reinforcement learning</li><li>DQN</li></ul>
+        <article class="card rl full" data-cat="ml">
+          <div class="rl-text">
+            <span class="tag">Latest project, Fall 2026</span>
+            <h3>Smart-Home Battery Energy Management with Reinforcement Learning</h3>
+            <p>An individual applied-RL project: agents decide each hour whether a home battery should charge, discharge or wait, to cut the household's electricity bill.</p>
+            <ul class="rl-points">
+              <li>Real data: NYISO Zone A (Western New York) electricity prices with NREL household demand and solar generation.</li>
+              <li>Compared a price-threshold baseline, tabular RL and a Deep Q-Network (DQN).</li>
+              <li>Measured every method against a perfect-information benchmark of the best possible daily cost.</li>
+              <li>Studied how a peak-usage penalty changes the learned charging policy and the daily cost.</li>
+            </ul>
+            <details class="case">
+              <summary>Full case study</summary>
+              <dl>
+                <dt>Problem</dt><dd>Electricity prices change every hour. A home battery saves money only if it charges when power is cheap and discharges when it is expensive, while still covering the home's demand.</dd>
+                <dt>Data</dt><dd>Real NYISO Zone A (Western New York) electricity prices, combined with NREL household demand and solar generation profiles.</dd>
+                <dt>Methods</dt><dd><ul><li>A price-threshold baseline rule, the strategy in the demo.</li><li>Tabular reinforcement learning.</li><li>A Deep Q-Network (DQN) agent.</li><li>A perfect-information benchmark that knows the whole day in advance and gives the best possible daily cost.</li></ul></dd>
+                <dt>Study</dt><dd>Added a peak-usage penalty to see how it changes the learned charging policy and the daily cost.</dd>
+                <dt>Role</dt><dd>Individual project: I designed the environment, built every method and ran the comparisons.</dd>
+              </dl>
+            </details>
+            <ul class="chips" aria-label="Technologies"><li>Python</li><li>Reinforcement learning</li><li>DQN</li><li>Tabular RL</li><li>NYISO and NREL data</li></ul>
+          </div>
+          <div class="demo" id="battery-demo">
+            <div class="demo-head">
+              <strong>Try it: the price-threshold baseline</strong>
+              <span class="demo-save" aria-live="polite"><span id="demo-pct">0%</span><small>cheaper than no battery, sample prices</small></span>
+            </div>
+            <svg id="demo-chart" viewBox="0 0 560 170" role="img" aria-label="Hourly electricity prices over one day, colored by whether the battery charges, discharges or waits, with the battery level drawn as a line"></svg>
+            <label for="demo-threshold">Charge when price is below <b id="demo-val">$45</b>/MWh, and discharge above it</label>
+            <input id="demo-threshold" type="range" min="28" max="84" step="1" value="45">
+            <div class="legend"><span><i style="background:#8FD4B4"></i>charging</span><span><i style="background:#E0A526"></i>discharging</span><span><i style="background:#3B5246"></i>waiting</span><span><i style="background:#F2F4EF;height:3px;vertical-align:3px"></i>battery level</span></div>
+          </div>
         </article>
 
-        <article class="card narrow">
-          <svg viewBox="0 0 200 110" role="img" aria-label="Illustration: bar chart of song popularity">
+        <article class="card half" data-cat="ml data">
+          <svg viewBox="0 0 200 110" role="img" aria-label="Illustration: bar chart of song popularity" style="max-width:260px">
             <rect x="8" y="60" width="22" height="50" rx="4" fill="#C9D2C8"/>
             <rect x="40" y="30" width="22" height="80" rx="4" fill="#C9D2C8"/>
             <rect x="72" y="72" width="22" height="38" rx="4" fill="#C9D2C8"/>
@@ -417,10 +589,19 @@
           </svg>
           <h3>Spotify song popularity</h3>
           <p>A Random Forest model in PySpark MLlib across 114,000+ songs, outperforming a Logistic Regression baseline.</p>
+          <details class="case">
+            <summary>Full case study</summary>
+            <dl>
+              <dt>Goal</dt><dd>Predict how popular a song will be from its attributes.</dd>
+              <dt>Data</dt><dd>114,000+ Spotify songs, processed at scale in PySpark.</dd>
+              <dt>Approach</dt><dd>Engineered features from the song data, then trained a Random Forest model with Spark MLlib and compared it with a Logistic Regression baseline.</dd>
+              <dt>Result</dt><dd>The Random Forest model outperformed Logistic Regression.</dd>
+            </dl>
+          </details>
           <ul class="chips" aria-label="Technologies"><li>PySpark</li><li>Spark MLlib</li></ul>
         </article>
 
-        <article class="card half">
+        <article class="card half" data-cat="data">
           <svg viewBox="0 0 300 110" role="img" aria-label="Illustration: linked database tables">
             <rect x="6" y="8" width="80" height="40" rx="8" fill="#E3E9E1" stroke="#17261F" stroke-width="2"/>
             <rect x="110" y="62" width="80" height="40" rx="8" fill="#E3E9E1" stroke="#17261F" stroke-width="2"/>
@@ -432,10 +613,19 @@
           </svg>
           <h3>Olist e-commerce database</h3>
           <p>A PostgreSQL schema with data ingestion and verification for the Olist Brazilian e-commerce dataset, about 100K orders across 9 linked tables. Built with a team of four.</p>
+          <details class="case">
+            <summary>Full case study</summary>
+            <dl>
+              <dt>Goal</dt><dd>Turn a real e-commerce dataset into a clean, queryable relational database.</dd>
+              <dt>Data</dt><dd>The public Olist Brazilian e-commerce dataset: about 100K orders with customers, items, sellers, payments and reviews across 9 linked tables.</dd>
+              <dt>Work</dt><dd><ul><li>Designed the PostgreSQL schema with keys linking the tables.</li><li>Built data ingestion to load the raw files.</li><li>Added verification checks to confirm the loaded data is complete and consistent.</li></ul></dd>
+              <dt>Team</dt><dd>Four students, working through a shared GitHub repository.</dd>
+            </dl>
+          </details>
           <ul class="chips" aria-label="Technologies"><li>PostgreSQL</li><li>SQL</li><li>GitHub</li></ul>
         </article>
 
-        <article class="card half">
+        <article class="card half" data-cat="ml">
           <svg viewBox="0 0 300 110" role="img" aria-label="Illustration: video frames being classified">
             <rect x="6" y="14" width="70" height="52" rx="8" fill="#17261F"/>
             <rect x="86" y="14" width="70" height="52" rx="8" fill="#17261F"/>
@@ -449,12 +639,35 @@
           </svg>
           <h3>Teaching style video classification</h3>
           <p>A classifier that labels lecture videos by teaching style from extracted visual features.</p>
+          <details class="case">
+            <summary>Full case study</summary>
+            <dl>
+              <dt>Goal</dt><dd>Automatically recognize the teaching style used in a lecture video.</dd>
+              <dt>Approach</dt><dd>Extracted visual features from lecture videos and trained a classifier to label each video by teaching style.</dd>
+              <dt>Tools</dt><dd>Python, machine learning, feature extraction and classification.</dd>
+            </dl>
+          </details>
           <ul class="chips" aria-label="Technologies"><li>Python</li><li>Computer vision</li></ul>
         </article>
 
-        <article class="card wide">
+        <article class="card half" data-cat="apps">
+          <svg viewBox="0 0 300 110" role="img" aria-label="Illustration: a phone showing recipe cards with a favorite heart">
+            <rect x="110" y="4" width="80" height="104" rx="14" fill="#17261F"/>
+            <rect x="120" y="18" width="60" height="22" rx="5" fill="#E3E9E1"/>
+            <rect x="120" y="46" width="60" height="22" rx="5" fill="#E3E9E1"/>
+            <rect x="120" y="74" width="60" height="22" rx="5" fill="#E3E9E1"/>
+            <path d="M168 26 c3 -4 9 -2 8 3 c-1 3 -8 7 -8 7 c0 0 -7 -4 -8 -7 c-1 -5 5 -7 8 -3z" fill="#E0A526"/>
+          </svg>
           <h3>Dish-A-Day recipe app</h3>
           <p>A cross-platform mobile app for browsing recipes, following step-by-step preparation and saving favorites, with a Firebase backend.</p>
+          <details class="case">
+            <summary>Full case study</summary>
+            <dl>
+              <dt>Goal</dt><dd>A simple daily cooking companion that works on both Android and iOS.</dd>
+              <dt>Features</dt><dd><ul><li>Browse recipes.</li><li>Follow step-by-step preparation.</li><li>Save favorites.</li></ul></dd>
+              <dt>Build</dt><dd>React Native front end with Firebase as the backend, developed and tested in Android Studio.</dd>
+            </dl>
+          </details>
           <ul class="chips" aria-label="Technologies"><li>React Native</li><li>Firebase</li><li>JavaScript</li><li>Android Studio</li></ul>
         </article>
       </div>
@@ -496,8 +709,9 @@
   <section class="contact" id="contact">
     <div class="wrap">
       <div>
-        <h2>Let's build something reliable.</h2>
+        <h2>Let's talk.</h2>
         <p>Available for full-time software and ML engineering roles from 2027, and open to internships before then.</p>
+        <button class="copy-btn" type="button" data-copy="sri559839@gmail.com">Copy my email</button>
       </div>
       <ul class="contact-list">
         <li><a href="mailto:sri559839@gmail.com">Email <span>sri559839@gmail.com</span></a></li>
@@ -510,24 +724,147 @@
   </section>
 </main>
 
+<dialog class="palette" aria-label="Quick jump">
+  <input type="text" placeholder="Jump to a section or action" aria-label="Search sections and actions">
+  <ul></ul>
+</dialog>
+
 <footer><div class="wrap">Sri Lakshmi Vaddi, Buffalo, NY</div></footer>
 
 <script>
-  // Draw small illustrative "byte images" for the PDF detector card.
-  document.querySelectorAll('.mosaic canvas').forEach(function (c) {
-    var ctx = c.getContext('2d');
-    var seed = Number(c.dataset.seed);
-    function rand() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
-    var base = { word: 120, gdocs: 128, python: 72 }[c.dataset.tone];
-    for (var y = 0; y < c.height; y++) {
-      for (var x = 0; x < c.width; x++) {
-        var band = (c.dataset.tone === 'python') ? (y % 6 < 2 ? 40 : 0) : (x % 8 < 2 ? 30 : 0);
-        var v = Math.max(0, Math.min(255, base + band + (rand() - 0.5) * 120));
-        ctx.fillStyle = 'rgb(' + v + ',' + v + ',' + v + ')';
-        ctx.fillRect(x, y, 1, 1);
+  // Scroll progress bar
+  var bar = document.querySelector('.progress');
+  function onScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Count-up for headline numbers (skipped if the visitor prefers reduced motion)
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      var end = parseFloat(el.dataset.count), dec = parseInt(el.dataset.decimals || '0', 10), suf = el.dataset.suffix || '';
+      var start = performance.now(), dur = 1400;
+      function tick(now) {
+        var t = Math.min(1, (now - start) / dur), e = 1 - Math.pow(1 - t, 3);
+        el.textContent = (end * e).toFixed(dec) + suf;
+        if (t < 1) requestAnimationFrame(tick);
       }
-    }
+      el.textContent = (0).toFixed(dec) + suf; requestAnimationFrame(tick);
+    });
+  }
+
+  // Project filters
+  var filterBtns = document.querySelectorAll('.filters button');
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.dataset.filter;
+      filterBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      document.querySelectorAll('#projects [data-cat]').forEach(function (card) {
+        var show = f === 'all' || card.dataset.cat.split(' ').indexOf(f) !== -1;
+        card.classList.toggle('is-hidden', !show);
+      });
+    });
   });
+
+  // Battery demo: a simple price-threshold rule over one illustrative day
+  (function () {
+    var prices = [32,30,28,27,27,29,38,52,60,55,48,44,42,41,43,50,64,78,85,72,58,46,40,35];
+    var svg = document.getElementById('demo-chart'), slider = document.getElementById('demo-threshold');
+    var pctEl = document.getElementById('demo-pct'), valEl = document.getElementById('demo-val');
+    var NS = 'http://www.w3.org/2000/svg', CAP = 4, W = 560, H = 170, top = 10, base = 140, maxP = 90;
+    function el(tag, attrs) { var n = document.createElementNS(NS, tag); for (var k in attrs) n.setAttribute(k, attrs[k]); return n; }
+    function draw() {
+      var T = +slider.value, level = 1, cost = 0, noBattery = 0, levels = [], acts = [];
+      prices.forEach(function (p) {
+        var act = 'wait', grid = 1;
+        if (p < T && level < CAP) { act = 'charge'; level += 1; grid = 2; }
+        else if (p > T && level > 0) { act = 'discharge'; level -= 1; grid = 0; }
+        cost += p * grid; noBattery += p; levels.push(level); acts.push(act);
+      });
+      var saved = Math.round((1 - cost / noBattery) * 100);
+      pctEl.textContent = saved + '%'; valEl.textContent = '$' + T;
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      var bw = W / prices.length;
+      prices.forEach(function (p, i) {
+        var h = (p / maxP) * (base - top);
+        var color = acts[i] === 'charge' ? '#8FD4B4' : acts[i] === 'discharge' ? '#E0A526' : '#3B5246';
+        svg.appendChild(el('rect', { x: i * bw + 2, y: base - h, width: bw - 4, height: h, rx: 3, fill: color }));
+      });
+      var ty = base - (T / maxP) * (base - top);
+      svg.appendChild(el('line', { x1: 0, x2: W, y1: ty, y2: ty, stroke: '#F2F4EF', 'stroke-width': 1, 'stroke-dasharray': '4 4', opacity: .6 }));
+      var d = levels.map(function (l, i) { return (i ? 'L' : 'M') + (i * bw + bw / 2) + ' ' + (base - 8 - (l / CAP) * 60); }).join(' ');
+      svg.appendChild(el('path', { d: d, fill: 'none', stroke: '#F2F4EF', 'stroke-width': 2.5 }));
+      [0, 6, 12, 18, 23].forEach(function (hr) {
+        var t = el('text', { x: hr * bw + bw / 2, y: H - 8, 'text-anchor': 'middle', fill: '#9DB0A5', 'font-size': 11, 'font-family': 'IBM Plex Sans, sans-serif' });
+        t.textContent = hr + ':00'; svg.appendChild(t);
+      });
+    }
+    slider.addEventListener('input', draw); draw();
+  })();
+
+  // Copy email
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.dataset.copy, label = btn.textContent;
+      function done() { btn.textContent = 'Email copied'; setTimeout(function () { btn.textContent = label; }, 1800); }
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () { window.location.href = 'mailto:' + text; });
+      else window.location.href = 'mailto:' + text;
+    });
+  });
+
+  // Quick jump menu (Cmd/Ctrl + K)
+  (function () {
+    var dlg = document.querySelector('dialog.palette');
+    if (!dlg || !dlg.showModal) return;
+    var input = dlg.querySelector('input'), list = dlg.querySelector('ul'), active = 0, shown = [];
+    var items = [
+      { label: 'Experience', hint: 'TCS and Allianz', go: '#experience' },
+      { label: 'Projects', hint: 'ML, data and apps', go: '#projects' },
+      { label: 'ForensicsDetective', hint: 'PDF provenance, featured project', go: '#projects' },
+      { label: 'Smart-home battery RL project', hint: 'Latest, interactive demo', go: '#battery-demo' },
+      { label: 'Skills', hint: 'Languages and tools', go: '#skills' },
+      { label: 'Education', hint: 'UB and RGUKT', go: '#education' },
+      { label: 'Contact', hint: 'Email and links', go: '#contact' },
+      { label: 'Download resume', hint: 'PDF', url: 'Sri_Lakshmi_Vaddi_Resume.pdf' },
+      { label: 'GitHub', hint: 'SrilakshmiV23', url: 'https://github.com/SrilakshmiV23' },
+      { label: 'LinkedIn', hint: 'sri-lakshmi-vaddi', url: 'https://www.linkedin.com/in/sri-lakshmi-vaddi-829142359' },
+      { label: 'Email Sri', hint: 'sri559839@gmail.com', url: 'mailto:sri559839@gmail.com' }
+    ];
+    function run(it) {
+      dlg.close();
+      if (it.go) { var t = document.querySelector(it.go); if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); }
+      else window.location.href = it.url;
+    }
+    function render() {
+      var q = input.value.trim().toLowerCase();
+      shown = items.filter(function (it) { return !q || (it.label + ' ' + it.hint).toLowerCase().indexOf(q) !== -1; });
+      if (active >= shown.length) active = 0;
+      list.innerHTML = '';
+      if (!shown.length) { var li = document.createElement('li'); li.className = 'empty'; li.textContent = 'No matches. Try "projects" or "resume".'; list.appendChild(li); return; }
+      shown.forEach(function (it, i) {
+        var li = document.createElement('li'), b = document.createElement('button');
+        b.type = 'button'; b.className = i === active ? 'active' : '';
+        b.innerHTML = '<b></b><span></span>'; b.firstChild.textContent = it.label; b.lastChild.textContent = it.hint;
+        b.addEventListener('click', function () { run(it); });
+        li.appendChild(b); list.appendChild(li);
+      });
+    }
+    function open() { input.value = ''; active = 0; render(); dlg.showModal(); input.focus(); }
+    document.querySelectorAll('[data-open-palette]').forEach(function (b) { b.addEventListener('click', open); });
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); dlg.open ? dlg.close() : open(); }
+    });
+    input.addEventListener('input', function () { active = 0; render(); });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); active = Math.min(active + 1, shown.length - 1); render(); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); active = Math.max(active - 1, 0); render(); }
+      if (e.key === 'Enter' && shown[active]) { e.preventDefault(); run(shown[active]); }
+    });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  })();
 </script>
 </body>
 </html>
